@@ -9,30 +9,44 @@
                         <p class="text-xs text-slate-400">Synergy with Your Business</p>
                     </div>
                 </div>
-                <p class="text-slate-400 text-sm leading-relaxed max-w-sm mb-4">PT Kami Bantu Konsultan adalah perusahaan jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan IT di Samarinda, Kalimantan Timur.</p>
-                <p class="text-slate-500 text-xs">Jl. Jend A.Yani (Eks.Cendrawasih) Ruko No 1B, Kel. Temindung Kec. Samarinda Kota, Kota Samarinda, Kalimantan Timur 75117</p>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-sm mb-4"><?php echo esc_html( get_theme_mod( 'footer_desc', 'PT Kami Bantu Konsultan adalah perusahaan jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan IT di Samarinda, Kalimantan Timur.' ) ); ?></p>
+                <p class="text-slate-500 text-xs"><?php echo esc_html( get_theme_mod( 'footer_address', 'Jl. Jend A.Yani (Eks.Cendrawasih) Ruko No 1B, Kel. Temindung Kec. Samarinda Kota, Kota Samarinda, Kalimantan Timur 75117' ) ); ?></p>
             </div>
             <div>
                 <h4 class="font-bold mb-6">Layanan</h4>
                 <ul class="space-y-3 text-sm text-slate-400">
-                    <li><a href="#services" class="hover:text-white transition-colors">Jasa Perpajakan</a></li>
-                    <li><a href="#services" class="hover:text-white transition-colors">Jasa Audit</a></li>
-                    <li><a class="hover:text-white transition-colors" href="<?php echo home_url('/sistemasi-bisnis'); ?>">IT Konsultan</a></li>
-                    <li><a href="#services" class="hover:text-white transition-colors">Perencanaan Keuangan</a></li>
-                    <li><a href="#services" class="hover:text-white transition-colors">Studi Kelayakan</a></li>
+                    <?php
+                    if ( has_nav_menu( 'footer' ) ) {
+                        wp_nav_menu( array(
+                            'theme_location' => 'footer',
+                            'container'      => false,
+                            'items_wrap'     => '%3$s', // Just list items, no wrapper ul (since we are inside ul)
+                            'depth'          => 1,
+                        ) );
+                    } else {
+                        // Fallback static footer links
+                        ?>
+                        <li><a href="#services" class="hover:text-white transition-colors">Jasa Perpajakan</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Jasa Audit</a></li>
+                        <li><a class="hover:text-white transition-colors" href="<?php echo home_url('/sistemasi-bisnis'); ?>">IT Konsultan</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Perencanaan Keuangan</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Studi Kelayakan</a></li>
+                        <?php
+                    }
+                    ?>
                 </ul>
             </div>
             <div>
                 <h4 class="font-bold mb-6">Kontak</h4>
                 <ul class="space-y-3 text-sm text-slate-400">
-                    <li>0813-4624-2556</li>
-                    <li>0823-5242-5339</li>
-                    <li>KonsultanKamiBantu@gmail.com</li>
+                    <li><?php echo esc_html( get_theme_mod( 'footer_phone1', '0813-4624-2556' ) ); ?></li>
+                    <li><?php echo esc_html( get_theme_mod( 'footer_phone2', '0823-5242-5339' ) ); ?></li>
+                    <li><?php echo esc_html( get_theme_mod( 'footer_email', 'KonsultanKamiBantu@gmail.com' ) ); ?></li>
                 </ul>
             </div>
         </div>
         <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-slate-500">
-            <p>© 2024 PT. Kami Bantu Konsultan. Hak Cipta Dilindungi Undang-Undang.</p>
+            <p><?php echo esc_html( get_theme_mod( 'footer_copyright', '© 2024 PT. Kami Bantu Konsultan. Hak Cipta Dilindungi Undang-Undang.' ) ); ?></p>
         </div>
     </div>
 </footer>

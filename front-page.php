@@ -8,21 +8,21 @@
                     <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
                     <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
                 </span>
-                KOLABORASI UNTUK BERTUMBUH
+                <?php echo esc_html( get_theme_mod( 'hero_tagline', 'KOLABORASI UNTUK BERTUMBUH' ) ); ?>
             </div>
             <h1 class="hero-animate-delay-1 text-4xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
-                Solusi Bisnis <br/>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-amber-500 animate-gradient">Terintegrasi</span>
+                <?php echo esc_html( get_theme_mod( 'hero_title', 'Solusi Bisnis' ) ); ?> <br/>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-amber-500 animate-gradient"><?php echo esc_html( get_theme_mod( 'hero_highlight', 'Terintegrasi' ) ); ?></span>
             </h1>
             <p class="hero-animate-delay-2 text-lg text-slate-600 mb-8 max-w-lg leading-relaxed">
-                PT Kami Bantu Konsultan bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan IT. Kami membantu pelaku usaha dalam menerapkan prinsip pengelolaan bisnis yang sesuai standar.
+                <?php echo nl2br( esc_html( get_theme_mod( 'hero_desc', 'PT Kami Bantu Konsultan bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan IT. Kami membantu pelaku usaha dalam menerapkan prinsip pengelolaan bisnis yang sesuai standar.' ) ) ); ?>
             </p>
             <div class="hero-animate-delay-3 flex flex-col sm:flex-row gap-4">
-                <button class="btn-ripple pulse-glow px-8 py-4 bg-blue-700 text-white font-semibold rounded hover:bg-amber-500 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                <button class="btn-ripple pulse-glow px-8 py-4 bg-blue-700 text-white font-semibold rounded hover:bg-amber-500 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
                     Jadwalkan Konsultasi
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
                 </button>
-                <button class="px-8 py-4 bg-white text-slate-700 border border-slate-300 font-semibold rounded hover:bg-slate-50 transition-all">Lihat Layanan</button>
+                <button class="px-8 py-4 bg-white text-slate-700 border border-slate-300 font-semibold rounded hover:bg-slate-50 transition-all" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Lihat Layanan</button>
             </div>
         </div>
         <div class="lg:w-1/2 relative hero-image-animate">
@@ -33,7 +33,14 @@
                 <p class="font-bold text-slate-900">Kami Siap Bantu</p>
             </div>
             <div class="relative rounded-lg overflow-hidden transform hover:scale-[1.02] transition-transform duration-500">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/wew.png" alt="PT Kami Bantu Konsultan" class="w-full object-cover"/>
+                <?php
+                $hero_image = get_theme_mod( 'hero_image' );
+                if ( $hero_image ) {
+                    echo '<img src="' . esc_url( $hero_image ) . '" alt="' . get_bloginfo( 'name' ) . '" class="w-full object-cover"/>';
+                } else {
+                    echo '<img src="' . get_template_directory_uri() . '/assets/images/wew.png" alt="PT Kami Bantu Konsultan" class="w-full object-cover"/>';
+                }
+                ?>
             </div>
             <div class="float-animation absolute -bottom-6 -left-6 bg-white p-6 rounded shadow-xl border border-slate-100 max-w-xs hidden md:block" style="animation-delay:0.5s">
                 <p class="text-sm text-slate-500 font-medium mb-1">Klien yang Dilayani</p>
@@ -80,105 +87,65 @@
     <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
             <div class="max-w-2xl">
-                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Pelayanan Kami</h2>
-                <p class="text-slate-600 text-lg">Kami menyediakan layanan lengkap untuk mendukung pertumbuhan bisnis Anda, dari perpajakan hingga transformasi digital.</p>
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4"><?php echo esc_html( get_theme_mod( 'home_service_title', 'Pelayanan Kami' ) ); ?></h2>
+                <p class="text-slate-600 text-lg"><?php echo nl2br( esc_html( get_theme_mod( 'home_service_desc', 'Kami menyediakan layanan lengkap untuk mendukung pertumbuhan bisnis Anda, dari perpajakan hingga transformasi digital.' ) ) ); ?></p>
             </div>
         </div>
         <div class="grid lg:grid-cols-3 gap-8">
-            <div class="lg:col-span-1 bg-gradient-to-br from-blue-900 to-slate-900 text-white p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:shadow-2xl transition-all duration-300">
-                <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                <div>
-                    <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-8 backdrop-blur-sm">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">IT Konsultan &amp; <br/>Sistem Informasi</h3>
-                    <p class="text-slate-300 leading-relaxed mb-6">Kami bekerja sama dengan PT Zahir Internasional dan Accurate untuk software ERP dan akuntansi. Transformasi digital untuk bisnis yang lebih efisien.</p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><svg class="text-blue-400 w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Software Akuntansi Zahir &amp; Accurate</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><svg class="text-blue-400 w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Pembuatan Aplikasi Custom</li>
-                        <li class="flex items-center gap-3 text-sm text-slate-300"><svg class="text-blue-400 w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>Perawatan Website &amp; Aplikasi</li>
-                    </ul>
-                </div>
-                <a class="w-full py-3 bg-amber-500 hover:bg-amber-600 rounded text-sm font-bold transition-colors text-center inline-block text-slate-900" href="<?php echo home_url('/sistemasi-bisnis'); ?>">Konsultasi IT &amp; Sistem</a>
-            </div>
+            <!-- Dynamic Services Loop -->
+            <?php
+            // Custom query to prioritize "IT Konsultan" or just standard ordering
+            $services_query = new WP_Query( array(
+                'post_type' => 'service',
+                'posts_per_page' => 10,
+                'order' => 'ASC', // You might want to use a plugin for Order later
+            ) );
             
-            <div class="lg:col-span-2 grid md:grid-cols-2 gap-6">
-                <!-- Jasa Perpajakan -->
-                <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-6">
-                            <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
-                                <svg class="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+            if ( $services_query->have_posts() ) :
+                while ( $services_query->have_posts() ) : $services_query->the_post();
+                    // Check for "IT" to give it special styling (optional logic based on title)
+                    $is_special = ( strpos( get_the_title(), 'IT' ) !== false || strpos( get_the_title(), 'Sistem' ) !== false );
+                    
+                    if ( $is_special ) {
+                        // Special Card Layout (Gradient)
+                        ?>
+                        <div class="lg:col-span-1 bg-gradient-to-br from-blue-900 to-slate-900 text-white p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                            <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                            <div>
+                                <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-8 backdrop-blur-sm">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+                                </div>
+                                <h3 class="text-2xl font-bold mb-4"><?php the_title(); ?></h3>
+                                <div class="text-slate-300 leading-relaxed mb-6">
+                                    <?php the_excerpt(); ?>
+                                </div>
                             </div>
+                            <a class="w-full py-3 bg-amber-500 hover:bg-amber-600 rounded text-sm font-bold transition-colors text-center inline-block text-slate-900" href="<?php echo home_url('/sistemasi-bisnis'); ?>">Lihat Detail</a>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Jasa Perpajakan</h3>
-                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">Membantu wajib pajak memenuhi kewajiban perpajakannya. Menyiapkan dan melaporkan pajak bulanan dan tahunan sesuai ketentuan perpajakan Indonesia.</p>
-                        <div class="space-y-2 pt-6 border-t border-slate-200">
-                            <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> SPT Masa &amp; Tahunan</div>
-                            <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Tax Planning</div>
-                            <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Korespondensi dengan Kantor Pajak</div>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20Jasa%20Perpajakan" target="_blank" rel="noopener noreferrer" class="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">Hubungi Kami</a>
-                </div>
-
-                <!-- Jasa Audit -->
-                <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
-                    <div>
-                        <div class="flex items-start justify-between mb-6">
-                            <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
-                                <svg class="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M8 13h2"></path><path d="M14 13h2"></path><path d="M8 17h2"></path><path d="M14 17h2"></path></svg>
+                        <?php
+                    } else {
+                        // Standard Card Layout
+                        ?>
+                        <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-start justify-between mb-6">
+                                    <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
+                                        <svg class="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+                                    </div>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 mb-3"><?php the_title(); ?></h3>
+                                <div class="text-slate-600 text-sm mb-6 leading-relaxed">
+                                    <?php the_content(); // Using content for standard cards to allow bullet points etc ?>
+                                </div>
                             </div>
+                            <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20<?php echo urlencode( get_the_title() ); ?>" target="_blank" rel="noopener noreferrer" class="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">Hubungi Kami</a>
                         </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Jasa Audit</h3>
-                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">Bekerja sama dengan KAP Heliantono &amp; Rekan di DKI Jakarta. Terdaftar sebagai KAP yang berhak melakukan audit di perusahaan BUMN.</p>
-                        <div class="space-y-2 pt-6 border-t border-slate-200">
-                             <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Audit Laporan Keuangan</div>
-                            <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Mitra Bank BUMN &amp; Swasta</div>
-                            <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Audit Internal Operasional</div>
-                        </div>
-                    </div>
-                    <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20Jasa%20Audit" target="_blank" rel="noopener noreferrer" class="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">Hubungi Kami</a>
-                </div>
-
-                <!-- Perencanaan Keuangan -->
-                <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
-                     <div>
-                        <div class="flex items-start justify-between mb-6">
-                            <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
-                                <svg class="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.21 15.89A10 10 0 1 1 8 2.83"></path><path d="M22 12A10 10 0 0 0 12 2v10Z"></path></svg>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Perencanaan Keuangan</h3>
-                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">Konsultasi dan perencanaan keuangan untuk pribadi maupun keluarga. Membantu klien mencapai tujuan keuangan dengan strategi yang tepat.</p>
-                        <div class="space-y-2 pt-6 border-t border-slate-200">
-                             <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Alokasi Aset &amp; Cashflow</div>
-                            <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Dana Darurat &amp; Pendidikan</div>
-                            <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Dana Pensiun &amp; Usaha</div>
-                        </div>
-                    </div>
-                     <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20Perencanaan%20Keuangan" target="_blank" rel="noopener noreferrer" class="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">Hubungi Kami</a>
-                </div>
-
-                <!-- Studi Kelayakan Bisnis -->
-                 <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
-                     <div>
-                        <div class="flex items-start justify-between mb-6">
-                            <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
-                                <svg class="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" x2="12" y1="20" y2="10"></line><line x1="18" x2="18" y1="20" y2="4"></line><line x1="6" x2="6" y1="20" y2="16"></line></svg>
-                            </div>
-                        </div>
-                        <h3 class="text-xl font-bold text-slate-900 mb-3">Studi Kelayakan Bisnis</h3>
-                        <p class="text-slate-600 text-sm mb-6 leading-relaxed">Perencanaan bisnis sebagai alat penting bagi pengusaha untuk pengambilan keputusan kebijakan perusahaan dan mencari pendanaan.</p>
-                        <div class="space-y-2 pt-6 border-t border-slate-200">
-                             <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Analisis Pasar &amp; Kompetitor</div>
-                            <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Proyeksi Finansial (ROI)</div>
-                            <div class="flex items-center gap-2 text-xs font-medium text-slate-500"><div class="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Proposal Pendanaan</div>
-                        </div>
-                    </div>
-                     <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20Studi%20Kelayakan%20Bisnis" target="_blank" rel="noopener noreferrer" class="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">Hubungi Kami</a>
-                </div>
-            </div>
+                        <?php
+                    }
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
         </div>
     </div>
 </section>
@@ -220,22 +187,37 @@
             <p class="text-slate-600 text-lg max-w-2xl mx-auto">Didukung oleh para profesional bersertifikasi dengan pengalaman di bidangnya masing-masing.</p>
         </div>
         <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <?php
+            // Custom query for Teams
+            $team_query = new WP_Query( array(
+                'post_type' => 'team',
+                'posts_per_page' => 10,
+            ) );
+            
+            if ( $team_query->have_posts() ) :
+                while ( $team_query->have_posts() ) : $team_query->the_post();
+                    $role = get_post_meta( get_the_ID(), 'role', true ) ?: 'Tim';
+            ?>
             <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all team-card text-center">
-                <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-2xl font-bold text-blue-700">WS</span>
+                <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
+                    <?php if ( has_post_thumbnail() ) {
+                        the_post_thumbnail('thumbnail', ['class' => 'w-full h-full object-cover']);
+                    } else { ?>
+                        <span class="text-2xl font-bold text-blue-700"><?php echo substr( get_the_title(), 0, 1 ); ?></span>
+                    <?php } ?>
                 </div>
-                <h3 class="font-bold text-slate-900 text-lg">Windu Surya Dewantara</h3>
-                <p class="text-blue-600 text-sm font-medium mb-3">Partner</p>
-                <ul class="text-xs text-slate-500 space-y-1 text-left inline-block"><li>• D-4 Akuntansi Manajerial Polnes</li><li>• Magister Manajemen Unmul</li><li>• Registered Financial Associated</li><li>• Brevet A-B IKPI</li></ul>
-            </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all team-card text-center">
-                <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-amber-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <span class="text-2xl font-bold text-blue-700">SF</span>
+                <h3 class="font-bold text-slate-900 text-lg"><?php the_title(); ?></h3>
+                <p class="text-blue-600 text-sm font-medium mb-3"><?php echo esc_html( $role ); ?></p>
+                <!-- Optional: Use excerpt or custom field for list of credentials -->
+                <div class="text-xs text-slate-500 space-y-1 text-left inline-block">
+                    <?php the_content(); ?>
                 </div>
-                <h3 class="font-bold text-slate-900 text-lg">Surya Fajar Saputra, S.Kom, M.Kom</h3>
-                <p class="text-blue-600 text-sm font-medium mb-3">Partner IT</p>
-                <ul class="text-xs text-slate-500 space-y-1 text-left inline-block"><li>• S-1 Ilmu Komputer Unmul</li><li>• S-2 Ilmu Komputer Nusa Mandiri</li><li>• Spesialis Android &amp; iOS</li><li>• Working Assessor Training</li></ul>
             </div>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            endif;
+            ?>
         </div>
     </div>
 </section>
