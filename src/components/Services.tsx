@@ -78,144 +78,168 @@ export default function Services() {
 
                         {/* Service 1: Perpajakan */}
                         <div
-                            className="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group">
-                            <div className="flex items-start justify-between mb-6">
-                                <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
-                                    {/* Calculator Icon */}
-                                    <svg className="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                        strokeLinecap="round" strokeLinejoin="round">
-                                        <rect width="16" height="20" x="4" y="2" rx="2" />
-                                        <line x1="8" x2="16" y1="6" y2="6" />
-                                        <line x1="16" x2="16" y1="14" y2="18" />
-                                        <path d="M16 10h.01" />
-                                        <path d="M12 10h.01" />
-                                        <path d="M8 10h.01" />
-                                        <path d="M12 14h.01" />
-                                        <path d="M8 14h.01" />
-                                        <path d="M12 18h.01" />
-                                        <path d="M8 18h.01" />
-                                    </svg>
+                            className="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
+                            <div>
+                                <div className="flex items-start justify-between mb-6">
+                                    <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
+                                        {/* Calculator Icon */}
+                                        <svg className="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                                            strokeLinecap="round" strokeLinejoin="round">
+                                            <rect width="16" height="20" x="4" y="2" rx="2" />
+                                            <line x1="8" x2="16" y1="6" y2="6" />
+                                            <line x1="16" x2="16" y1="14" y2="18" />
+                                            <path d="M16 10h.01" />
+                                            <path d="M12 10h.01" />
+                                            <path d="M8 10h.01" />
+                                            <path d="M12 14h.01" />
+                                            <path d="M8 14h.01" />
+                                            <path d="M12 18h.01" />
+                                            <path d="M8 18h.01" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">Jasa Perpajakan</h3>
+                                <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+                                    Membantu wajib pajak memenuhi kewajiban perpajakannya. Menyiapkan dan melaporkan pajak
+                                    bulanan dan tahunan sesuai ketentuan perpajakan Indonesia.
+                                </p>
+                                <div className="space-y-2 pt-6 border-t border-slate-200">
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> SPT Masa & Tahunan
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Tax Planning
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Korespondensi dengan Kantor
+                                        Pajak
+                                    </div>
                                 </div>
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">Jasa Perpajakan</h3>
-                            <p className="text-slate-600 text-sm mb-6 leading-relaxed">
-                                Membantu wajib pajak memenuhi kewajiban perpajakannya. Menyiapkan dan melaporkan pajak
-                                bulanan dan tahunan sesuai ketentuan perpajakan Indonesia.
-                            </p>
-                            <div className="space-y-2 pt-6 border-t border-slate-200">
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> SPT Masa & Tahunan
-                                </div>
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Tax Planning
-                                </div>
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Korespondensi dengan Kantor
-                                    Pajak
-                                </div>
-                            </div>
+                            <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20Jasa%20Perpajakan" target="_blank" rel="noopener noreferrer"
+                                className="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">
+                                Hubungi Kami
+                            </a>
                         </div>
 
                         {/* Service 2: Audit */}
                         <div
-                            className="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group">
-                            <div className="flex items-start justify-between mb-6">
-                                <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
-                                    {/* FileSpreadsheet Icon */}
-                                    <svg className="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                        strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                                        <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                                        <path d="M8 13h2" />
-                                        <path d="M14 13h2" />
-                                        <path d="M8 17h2" />
-                                        <path d="M14 17h2" />
-                                    </svg>
+                            className="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
+                            <div>
+                                <div className="flex items-start justify-between mb-6">
+                                    <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
+                                        {/* FileSpreadsheet Icon */}
+                                        <svg className="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                                            strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
+                                            <path d="M14 2v4a2 2 0 0 0 2 2h4" />
+                                            <path d="M8 13h2" />
+                                            <path d="M14 13h2" />
+                                            <path d="M8 17h2" />
+                                            <path d="M14 17h2" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">Jasa Audit</h3>
+                                <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+                                    Bekerja sama dengan KAP Heliantono & Rekan di DKI Jakarta. Terdaftar sebagai KAP yang berhak
+                                    melakukan audit di perusahaan BUMN.
+                                </p>
+                                <div className="space-y-2 pt-6 border-t border-slate-200">
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Audit Laporan Keuangan
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Mitra Bank BUMN & Swasta
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Audit Internal Operasional
+                                    </div>
                                 </div>
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">Jasa Audit</h3>
-                            <p className="text-slate-600 text-sm mb-6 leading-relaxed">
-                                Bekerja sama dengan KAP Heliantono & Rekan di DKI Jakarta. Terdaftar sebagai KAP yang berhak
-                                melakukan audit di perusahaan BUMN.
-                            </p>
-                            <div className="space-y-2 pt-6 border-t border-slate-200">
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Audit Laporan Keuangan
-                                </div>
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Mitra Bank BUMN & Swasta
-                                </div>
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Audit Internal Operasional
-                                </div>
-                            </div>
+                            <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20Jasa%20Audit" target="_blank" rel="noopener noreferrer"
+                                className="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">
+                                Hubungi Kami
+                            </a>
                         </div>
 
                         {/* Service 3: Perencanaan Keuangan */}
                         <div
-                            className="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group">
-                            <div className="flex items-start justify-between mb-6">
-                                <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
-                                    {/* PieChart Icon */}
-                                    <svg className="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                        strokeLinecap="round" strokeLinejoin="round">
-                                        <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
-                                        <path d="M22 12A10 10 0 0 0 12 2v10Z" />
-                                    </svg>
+                            className="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
+                            <div>
+                                <div className="flex items-start justify-between mb-6">
+                                    <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
+                                        {/* PieChart Icon */}
+                                        <svg className="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                                            strokeLinecap="round" strokeLinejoin="round">
+                                            <path d="M21.21 15.89A10 10 0 1 1 8 2.83" />
+                                            <path d="M22 12A10 10 0 0 0 12 2v10Z" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">Perencanaan Keuangan</h3>
+                                <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+                                    Konsultasi dan perencanaan keuangan untuk pribadi maupun keluarga. Membantu klien mencapai
+                                    tujuan keuangan dengan strategi yang tepat.
+                                </p>
+                                <div className="space-y-2 pt-6 border-t border-slate-200">
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Alokasi Aset & Cashflow
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Dana Darurat & Pendidikan
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Dana Pensiun & Usaha
+                                    </div>
                                 </div>
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">Perencanaan Keuangan</h3>
-                            <p className="text-slate-600 text-sm mb-6 leading-relaxed">
-                                Konsultasi dan perencanaan keuangan untuk pribadi maupun keluarga. Membantu klien mencapai
-                                tujuan keuangan dengan strategi yang tepat.
-                            </p>
-                            <div className="space-y-2 pt-6 border-t border-slate-200">
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Alokasi Aset & Cashflow
-                                </div>
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Dana Darurat & Pendidikan
-                                </div>
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Dana Pensiun & Usaha
-                                </div>
-                            </div>
+                            <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20Perencanaan%20Keuangan" target="_blank" rel="noopener noreferrer"
+                                className="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">
+                                Hubungi Kami
+                            </a>
                         </div>
 
                         {/* Service 4: Studi Kelayakan */}
                         <div
-                            className="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group">
-                            <div className="flex items-start justify-between mb-6">
-                                <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
-                                    {/* BarChart Icon */}
-                                    <svg className="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
-                                        strokeLinecap="round" strokeLinejoin="round">
-                                        <line x1="12" x2="12" y1="20" y2="10" />
-                                        <line x1="18" x2="18" y1="20" y2="4" />
-                                        <line x1="6" x2="6" y1="20" y2="16" />
-                                    </svg>
+                            className="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
+                            <div>
+                                <div className="flex items-start justify-between mb-6">
+                                    <div className="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
+                                        {/* BarChart Icon */}
+                                        <svg className="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg"
+                                            viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                                            strokeLinecap="round" strokeLinejoin="round">
+                                            <line x1="12" x2="12" y1="20" y2="10" />
+                                            <line x1="18" x2="18" y1="20" y2="4" />
+                                            <line x1="6" x2="6" y1="20" y2="16" />
+                                        </svg>
+                                    </div>
+                                </div>
+                                <h3 className="text-xl font-bold text-slate-900 mb-3">Studi Kelayakan Bisnis</h3>
+                                <p className="text-slate-600 text-sm mb-6 leading-relaxed">
+                                    Perencanaan bisnis sebagai alat penting bagi pengusaha untuk pengambilan keputusan kebijakan
+                                    perusahaan dan mencari pendanaan.
+                                </p>
+                                <div className="space-y-2 pt-6 border-t border-slate-200">
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Analisis Pasar & Kompetitor
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Proyeksi Finansial (ROI)
+                                    </div>
+                                    <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
+                                        <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Proposal Pendanaan
+                                    </div>
                                 </div>
                             </div>
-                            <h3 className="text-xl font-bold text-slate-900 mb-3">Studi Kelayakan Bisnis</h3>
-                            <p className="text-slate-600 text-sm mb-6 leading-relaxed">
-                                Perencanaan bisnis sebagai alat penting bagi pengusaha untuk pengambilan keputusan kebijakan
-                                perusahaan dan mencari pendanaan.
-                            </p>
-                            <div className="space-y-2 pt-6 border-t border-slate-200">
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Analisis Pasar & Kompetitor
-                                </div>
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Proyeksi Finansial (ROI)
-                                </div>
-                                <div className="flex items-center gap-2 text-xs font-medium text-slate-500">
-                                    <div className="w-1.5 h-1.5 bg-blue-500 rounded-full"></div> Proposal Pendanaan
-                                </div>
-                            </div>
+                            <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20Studi%20Kelayakan%20Bisnis" target="_blank" rel="noopener noreferrer"
+                                className="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">
+                                Hubungi Kami
+                            </a>
                         </div>
 
                     </div>
