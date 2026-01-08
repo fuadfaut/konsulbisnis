@@ -4,9 +4,9 @@ import Link from 'next/link';
 
 export default function Services() {
     return (
-        <section id="services" className="py-24 bg-white">
+        <section id="services" className="py-8 bg-white">
             <div className="container mx-auto px-6">
-                <div className="animate-on-scroll flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
                     <div className="max-w-2xl">
                         <h2 className="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Pelayanan Kami</h2>
                         <p className="text-slate-600 text-lg">Kami menyediakan layanan lengkap untuk mendukung pertumbuhan

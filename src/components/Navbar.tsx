@@ -32,7 +32,7 @@ export default function Navbar() {
                 <div className="flex items-center gap-3 cursor-pointer" onClick={() => handleScrollTo('hero')}>
                     <img src="/logo.png" alt="Logo PT. Kami Bantu Konsultan" className="w-10 h-10 rounded" />
                     <div className="leading-tight">
-                        <h1 className="text-xl font-bold text-slate-900 tracking-tight">KAMI BANTU</h1>
+                        <h1 className="text-xl font-bold text-slate-900 tracking-tight">KONSUL BISNIS</h1>
                         <p className="text-[10px] font-medium text-slate-500 tracking-widest uppercase">PT Kami Bantu Konsultan
                         </p>
                     </div>

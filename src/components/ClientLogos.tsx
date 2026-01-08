@@ -1,6 +1,6 @@
 export default function ClientLogos() {
     return (
-        <section className="py-8 bg-slate-50 border-y border-slate-100">
+        <section className="py-6 bg-slate-50 border-y border-slate-100">
             <div className="container mx-auto px-6 mb-4">
                 <p className="text-center text-sm text-slate-500 font-medium">Dipercaya oleh berbagai perusahaan dan instansi
                 </p>
@@ -46,6 +46,7 @@ export default function ClientLogos() {
                             <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Logo_Kota_Samarinda.png"
                                 alt="pemkot Samarinda"
                                 className="h-10 object-contain grayscale hover:grayscale-0 transition-all" />
+                            <span className="text-lg font-bold text-slate-700">Pemkot Samarinda</span>
                         </div>
 
                         <div className="flex flex-col items-center min-w-[150px]">
@@ -94,6 +95,7 @@ export default function ClientLogos() {
                             <img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Logo_Kota_Samarinda.png"
                                 alt="pemkot Samarinda"
                                 className="h-10 object-contain grayscale hover:grayscale-0 transition-all" />
+                            <span className="text-lg font-bold text-slate-700">Pemkot Samarinda</span>
                         </div>
 
                         <div className="flex flex-col items-center min-w-[150px]">

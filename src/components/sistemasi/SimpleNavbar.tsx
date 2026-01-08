@@ -10,7 +10,7 @@ export default function SimpleNavbar() {
                 <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition-opacity">
                     <img src="/logo.png" alt="Logo PT. Kami Bantu Konsultan" className="w-9 h-9 rounded" />
                     <div className="leading-tight">
-                        <h1 className="text-lg font-bold text-slate-900 tracking-tight">KAMI BANTU</h1>
+                        <h1 className="text-lg font-bold text-slate-900 tracking-tight">KONSUL BISNIS</h1>
                         <p className="text-[10px] font-medium text-slate-500 tracking-widest uppercase">PT Kami Bantu Konsultan
                         </p>
                     </div>
