@@ -125,8 +125,8 @@
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-3"><?php the_title(); ?></h3>
                             <?php edit_post_link( '✎ Edit', '<span class="text-xs text-blue-500 hover:underline mb-2 block">', '</span>' ); ?>
-                            <div class="text-slate-600 text-sm mb-6 leading-relaxed line-clamp-3">
-                                <?php echo get_the_excerpt(); ?>
+                            <div class="text-slate-600 text-sm mb-6 leading-relaxed [&>ul]:list-disc [&>ul]:pl-4 [&>ol]:list-decimal [&>ol]:pl-4 [&>li]:mb-1 [&>p]:mb-2">
+                                <?php the_content(); ?>
                             </div>
                         </div>
                         <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20<?php echo urlencode( get_the_title() ); ?>" target="_blank" rel="noopener noreferrer" class="mt-auto w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">Hubungi Kami</a>
