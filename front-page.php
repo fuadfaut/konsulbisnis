@@ -116,20 +116,20 @@
                 foreach ( $other_services as $post ) :
                     setup_postdata( $post );
                     ?>
-                    <div class="p-8 border border-slate-200 rounded-2xl bg-white hover:shadow-xl hover:border-blue-200 transition-all duration-300 group flex flex-col justify-between h-full">
+                    <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between h-full">
                         <div>
                             <div class="flex items-start justify-between mb-6">
-                                <div class="p-3 bg-blue-50 rounded-lg group-hover:bg-blue-100 transition-colors">
-                                    <svg class="text-blue-600 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
+                                <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
+                                    <svg class="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
                                 </div>
                             </div>
-                            <h3 class="text-xl font-bold text-slate-800 mb-3"><?php the_title(); ?></h3>
-                            <?php edit_post_link( '✎ Edit', '<span class="text-xs text-slate-400 hover:text-blue-600 mb-2 block transition-colors">', '</span>' ); ?>
-                            <div class="text-slate-500 text-sm mb-6 leading-relaxed line-clamp-3">
+                            <h3 class="text-xl font-bold text-slate-900 mb-3"><?php the_title(); ?></h3>
+                            <?php edit_post_link( '✎ Edit', '<span class="text-xs text-blue-500 hover:underline mb-2 block">', '</span>' ); ?>
+                            <div class="text-slate-600 text-sm mb-6 leading-relaxed line-clamp-3">
                                 <?php echo get_the_excerpt(); ?>
                             </div>
                         </div>
-                        <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20<?php echo urlencode( get_the_title() ); ?>" target="_blank" rel="noopener noreferrer" class="mt-auto w-full py-3 bg-slate-800 hover:bg-slate-700 text-white rounded-lg text-sm font-semibold transition-colors text-center inline-block">Konsultasi</a>
+                        <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20<?php echo urlencode( get_the_title() ); ?>" target="_blank" rel="noopener noreferrer" class="mt-auto w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">Hubungi Kami</a>
                     </div>
                 <?php
                 endforeach;
