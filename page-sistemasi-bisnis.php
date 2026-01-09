@@ -27,39 +27,7 @@ get_header();
     </section>
 
     <!-- Leader (Team Section) -->
-    <section class="py-16 bg-gradient-to-r from-blue-50 to-amber-50">
-        <div class="container mx-auto px-6">
-            <?php
-            // Query for Team members, maybe specifically tagged or just get one for now as "Leader"
-            // For simplicity, we loop through 'team' CPT
-            $team_query = new WP_Query( array(
-                'post_type' => 'team',
-                'posts_per_page' => 1, // Currently design favors one leader here
-            ) );
-            
-            if ( $team_query->have_posts() ) :
-                while ( $team_query->have_posts() ) : $team_query->the_post();
-                    $role = get_post_meta( get_the_ID(), 'role', true ) ?: 'Partner IT';
-            ?>
-            <div class="flex flex-col md:flex-row items-center justify-center gap-8">
-                <div class="text-center md:text-left">
-                    <p class="text-sm text-amber-600 font-semibold mb-2">Dipimpin oleh</p>
-                    <h3 class="text-2xl font-bold text-slate-900"><?php the_title(); ?></h3>
-                    <p class="text-slate-600"><?php echo esc_html( $role ); ?></p>
-                </div>
-                <div class="hidden md:block w-px h-16 bg-slate-300"></div>
-                <div class="flex items-center gap-6">
-                    <div class="text-center"><p class="text-3xl font-bold text-amber-600">S-2</p><p class="text-xs text-slate-500">Ilmu Komputer</p></div>
-                    <div class="text-center"><p class="text-3xl font-bold text-amber-600">30+</p><p class="text-xs text-slate-500">Proyek IT</p></div>
-                </div>
-            </div>
-            <?php 
-                endwhile; 
-                wp_reset_postdata();
-            endif; 
-            ?>
-        </div>
-    </section>
+
 
     <!-- Problems (Static for now as it's purely layout structure, unless user requests editable problems) -->
     <section class="py-20 bg-slate-50">
