@@ -5,8 +5,8 @@
                 <div class="flex items-center gap-3 mb-6">
                     <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo PT. Kami Bantu Konsultan" class="w-10 h-10 rounded"/>
                     <div>
-                        <span class="text-xl font-bold">KAMI BANTU</span>
-                        <p class="text-xs text-slate-400">Synergy with Your Business</p>
+                        <span class="text-xl font-bold">KONSULBISNIS</span>
+                        <p class="text-xs text-slate-400">PT Kami Bantu Konsultan</p>
                     </div>
                 </div>
                 <p class="text-slate-400 text-sm leading-relaxed max-w-sm mb-4"><?php echo esc_html( get_theme_mod( 'footer_desc', 'PT Kami Bantu Konsultan adalah perusahaan jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan IT di Samarinda, Kalimantan Timur.' ) ); ?></p>

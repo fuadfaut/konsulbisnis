@@ -91,61 +91,83 @@
                 <p class="text-slate-600 text-lg"><?php echo nl2br( esc_html( get_theme_mod( 'home_service_desc', 'Kami menyediakan layanan lengkap untuk mendukung pertumbuhan bisnis Anda, dari perpajakan hingga transformasi digital.' ) ) ); ?></p>
             </div>
         </div>
-        <div class="grid lg:grid-cols-3 gap-8">
-            <!-- Dynamic Services Loop -->
+        <div class="flex flex-col lg:flex-row gap-8">
             <?php
-            // Custom query to prioritize "IT Konsultan" or just standard ordering
             $services_query = new WP_Query( array(
                 'post_type' => 'service',
                 'posts_per_page' => 10,
-                'order' => 'ASC', // You might want to use a plugin for Order later
+                'order' => 'ASC',
             ) );
-            
-            if ( $services_query->have_posts() ) :
-                while ( $services_query->have_posts() ) : $services_query->the_post();
-                    // Check for "IT" to give it special styling (optional logic based on title)
-                    $is_special = ( strpos( get_the_title(), 'IT' ) !== false || strpos( get_the_title(), 'Sistem' ) !== false );
-                    
-                    if ( $is_special ) {
-                        // Special Card Layout (Gradient)
-                        ?>
-                        <div class="lg:col-span-1 bg-gradient-to-br from-blue-900 to-slate-900 text-white p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:shadow-2xl transition-all duration-300">
-                            <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
-                            <div>
-                                <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-8 backdrop-blur-sm">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
-                                </div>
-                                <h3 class="text-2xl font-bold mb-4"><?php the_title(); ?></h3>
-                                <div class="text-slate-300 leading-relaxed mb-6">
-                                    <?php the_excerpt(); ?>
-                                </div>
-                            </div>
-                            <a class="w-full py-3 bg-amber-500 hover:bg-amber-600 rounded text-sm font-bold transition-colors text-center inline-block text-slate-900" href="<?php echo home_url('/sistemasi-bisnis'); ?>">Lihat Detail</a>
-                        </div>
-                        <?php
+
+            $special_service = null;
+            $other_services = array();
+
+            if ( $services_query->have_posts() ) {
+                while ( $services_query->have_posts() ) {
+                    $services_query->the_post();
+                    // Identify special service by title keywords
+                    $title = get_the_title();
+                    if ( ! $special_service && ( strpos( $title, 'IT' ) !== false || strpos( $title, 'Sistem' ) !== false ) ) {
+                        $special_service = $post;
                     } else {
-                        // Standard Card Layout
-                        ?>
-                        <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between">
-                            <div>
-                                <div class="flex items-start justify-between mb-6">
-                                    <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
-                                        <svg class="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
-                                    </div>
-                                </div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3"><?php the_title(); ?></h3>
-                                <div class="text-slate-600 text-sm mb-6 leading-relaxed">
-                                    <?php the_content(); // Using content for standard cards to allow bullet points etc ?>
+                        $other_services[] = $post;
+                    }
+                }
+                wp_reset_postdata();
+            }
+
+            // --- LEFT COLUMN (Special Card) ---
+            if ( $special_service ) :
+                // Setup global post data for template tags to work
+                global $post;
+                $post = $special_service;
+                setup_postdata( $post );
+                ?>
+                <div class="lg:w-1/3 min-h-full">
+                    <div class="h-full bg-gradient-to-br from-blue-900 to-slate-900 text-white p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:shadow-2xl transition-all duration-300">
+                        <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
+                        <div class="relative z-10">
+                            <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-8 backdrop-blur-sm">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#60a5fa" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"></rect><line x1="8" x2="16" y1="21" y2="21"></line><line x1="12" x2="12" y1="17" y2="21"></line></svg>
+                            </div>
+                            <h3 class="text-3xl font-bold mb-6"><?php the_title(); ?></h3>
+                            <?php edit_post_link( '✎ Edit Layanan', '<div class="mb-4 text-sm text-amber-300 font-bold hover:underline">', '</div>' ); ?>
+                            <div class="text-slate-300 leading-relaxed mb-8 service-content">
+                                <?php the_content(); ?>
+                            </div>
+                        </div>
+                        <a class="relative z-10 w-full py-4 bg-amber-500 hover:bg-amber-600 rounded-lg text-slate-900 font-bold text-center transition-all shadow-lg hover:shadow-amber-500/50" href="<?php echo home_url('/sistemasi-bisnis'); ?>">Konsultasi IT & Sistem</a>
+                    </div>
+                </div>
+                <?php wp_reset_postdata(); ?>
+            <?php endif; ?>
+
+            <?php // --- RIGHT COLUMN (Grid of Other Services) --- ?>
+            <div class="<?php echo $special_service ? 'lg:w-2/3' : 'w-full'; ?> grid md:grid-cols-2 gap-6">
+                <?php
+                foreach ( $other_services as $post ) :
+                    setup_postdata( $post );
+                    ?>
+                    <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between h-full">
+                        <div>
+                            <div class="flex items-start justify-between mb-6">
+                                <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
+                                    <svg class="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
                                 </div>
                             </div>
-                            <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20<?php echo urlencode( get_the_title() ); ?>" target="_blank" rel="noopener noreferrer" class="mt-8 w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">Hubungi Kami</a>
+                            <h3 class="text-xl font-bold text-slate-900 mb-3"><?php the_title(); ?></h3>
+                            <?php edit_post_link( '✎ Edit', '<span class="text-xs text-blue-500 hover:underline mb-2 block">', '</span>' ); ?>
+                            <div class="text-slate-600 text-sm mb-6 leading-relaxed line-clamp-3">
+                                <?php echo get_the_excerpt(); ?>
+                            </div>
                         </div>
-                        <?php
-                    }
-                endwhile;
+                        <a href="https://wa.me/6281346242556?text=Halo%20saya%20tertarik%20dengan%20<?php echo urlencode( get_the_title() ); ?>" target="_blank" rel="noopener noreferrer" class="mt-auto w-full py-2.5 bg-blue-600 hover:bg-blue-700 rounded-lg text-white text-sm font-semibold transition-colors text-center inline-block">Hubungi Kami</a>
+                    </div>
+                <?php
+                endforeach;
                 wp_reset_postdata();
-            endif;
-            ?>
+                ?>
+            </div>
         </div>
     </div>
 </section>
@@ -180,47 +202,7 @@
     </div>
 </section>
 
-<section id="team" class="py-24 bg-slate-50">
-    <div class="container mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4">Tim Profesional Kami</h2>
-            <p class="text-slate-600 text-lg max-w-2xl mx-auto">Didukung oleh para profesional bersertifikasi dengan pengalaman di bidangnya masing-masing.</p>
-        </div>
-        <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            <?php
-            // Custom query for Teams
-            $team_query = new WP_Query( array(
-                'post_type' => 'team',
-                'posts_per_page' => 10,
-            ) );
-            
-            if ( $team_query->have_posts() ) :
-                while ( $team_query->have_posts() ) : $team_query->the_post();
-                    $role = get_post_meta( get_the_ID(), 'role', true ) ?: 'Tim';
-            ?>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl transition-all team-card text-center">
-                <div class="w-20 h-20 bg-gradient-to-br from-blue-100 to-amber-100 rounded-full flex items-center justify-center mx-auto mb-4 overflow-hidden">
-                    <?php if ( has_post_thumbnail() ) {
-                        the_post_thumbnail('thumbnail', ['class' => 'w-full h-full object-cover']);
-                    } else { ?>
-                        <span class="text-2xl font-bold text-blue-700"><?php echo substr( get_the_title(), 0, 1 ); ?></span>
-                    <?php } ?>
-                </div>
-                <h3 class="font-bold text-slate-900 text-lg"><?php the_title(); ?></h3>
-                <p class="text-blue-600 text-sm font-medium mb-3"><?php echo esc_html( $role ); ?></p>
-                <!-- Optional: Use excerpt or custom field for list of credentials -->
-                <div class="text-xs text-slate-500 space-y-1 text-left inline-block">
-                    <?php the_content(); ?>
-                </div>
-            </div>
-            <?php
-                endwhile;
-                wp_reset_postdata();
-            endif;
-            ?>
-        </div>
-    </div>
-</section>
+
 
 <section id="contact" class="py-24 bg-white">
     <div class="container mx-auto px-6">

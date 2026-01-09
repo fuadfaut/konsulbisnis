@@ -11,6 +11,7 @@ function konsulbisnis_setup() {
         'flex-height' => true,
         'flex-width'  => true,
     ) );
+    add_theme_support( 'title-tag' );
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'konsulbisnis' ),
         'footer'  => __( 'Footer Menu', 'konsulbisnis' ),

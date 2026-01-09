@@ -50,7 +50,7 @@ export default function SistemasiBisnis() {
             <TopBar />
             <SimpleNavbar />
             <SistemasiHero />
-            <ITPartner />
+            {/* <ITPartner /> */}
             <ProblemSolution />
             <ITServices />
             <ITProjects />

@@ -61,7 +61,7 @@ export default function Home() {
       <ClientLogos />
       <Services />
       <About />
-      <Team />
+      {/* <Team /> */}
       <Contact />
       <Footer />
     </main>
