@@ -1,5 +1,5 @@
 /*
-Theme Name: KonsulBisnis
+Theme Name: Guten Konsul Bisnis
 Theme URI: https://example.com/konsulbisnis
 Author: Kami Bantu Konsultan
 Author URI: https://example.com
@@ -312,6 +312,7 @@ Text Domain: konsulbisnis
 
     html,
     :host {
+        scroll-behavior: smooth;
         -webkit-text-size-adjust: 100%;
         tab-size: 4;
         line-height: 1.5;

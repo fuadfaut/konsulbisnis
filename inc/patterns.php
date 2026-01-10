@@ -17,7 +17,7 @@ function konsul_register_block_patterns() {
 	// Register Category
 	register_block_pattern_category(
 		'konsulbisnis',
-		array( 'label' => __( 'Konsul Bisnis', 'konsulbisnis' ) )
+		array( 'label' => __( 'Guten Konsul Bisnis', 'konsulbisnis' ) )
 	);
 
 	// 1. Hero Section Pattern
@@ -43,22 +43,17 @@ function konsul_register_block_patterns() {
 								<p class="hero-animate-delay-2 text-lg text-slate-600 mb-8 max-w-lg leading-relaxed">PT Kami Bantu Konsultan bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan IT. Kami membantu pelaku usaha dalam menerapkan prinsip pengelolaan bisnis yang sesuai standar.</p>
 								<!-- /wp:paragraph -->
 
-								<!-- wp:group {"className":"hero-animate-delay-3 flex flex-col sm:flex-row gap-4","layout":{"type":"default"}} -->
-								<div class="wp-block-group hero-animate-delay-3 flex flex-col sm:flex-row gap-4">
-									<!-- wp:html -->
-									<button class="btn-ripple pulse-glow px-8 py-4 bg-blue-700 text-white font-semibold rounded hover:bg-amber-500 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl" onclick="document.getElementById(\'contact\').scrollIntoView({behavior: \'smooth\'});">
-										Jadwalkan Konsultasi
-										<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
-									</button>
-									<!-- /wp:html -->
+								<!-- wp:buttons {"layout":{"type":"flex","justifyContent":"left"},"className":"hero-animate-delay-3 gap-4"} -->
+								<div class="wp-block-buttons hero-animate-delay-3 gap-4">
+									<!-- wp:button {"backgroundColor":"blue-700","textColor":"white","className":"btn-ripple pulse-glow font-semibold rounded shadow-lg hover:shadow-xl transition-all"} -->
+									<div class="wp-block-button btn-ripple pulse-glow font-semibold rounded shadow-lg hover:shadow-xl transition-all"><a class="wp-block-button__link has-white-color has-blue-700-background-color has-text-color has-background px-8 py-4 text-lg" href="#contact">Jadwalkan Konsultasi ></a></div>
+									<!-- /wp:button -->
 
-									<!-- wp:html -->
-									<button class="px-8 py-4 bg-white text-slate-700 border border-slate-300 font-semibold rounded hover:bg-slate-50 transition-all" onclick="document.getElementById(\'services\').scrollIntoView({behavior: \'smooth\'});">
-										Lihat Layanan
-									</button>
-									<!-- /wp:html -->
+									<!-- wp:button {"backgroundColor":"white","textColor":"slate-700","className":"border border-slate-300 font-semibold rounded hover:bg-slate-50 transition-all"} -->
+									<div class="wp-block-button border border-slate-300 font-semibold rounded hover:bg-slate-50 transition-all"><a class="wp-block-button__link has-slate-700-color has-white-background-color has-text-color has-background px-8 py-4 text-lg" href="#services">Lihat Layanan</a></div>
+									<!-- /wp:button -->
 								</div>
-								<!-- /wp:group -->
+								<!-- /wp:buttons -->
 							</div>
 							<!-- /wp:column -->
 
