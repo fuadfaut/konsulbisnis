@@ -23,7 +23,7 @@
                 </span>
             </div>
             <div class="hidden md:flex gap-3">
-                <a href="<?php echo esc_url( get_theme_mod( 'topbar_instagram', '#' ) ); ?>" class="hover:text-white" target="_blank">Instagram</a>
+                <a href="https://kamibantu.co" class="hover:text-white" target="_blank">Instagram</a>
             </div>
         </div>
     </div>
@@ -63,21 +63,20 @@
                     <a href="<?php echo home_url('/'); ?>" class="hover:text-blue-700 transition-colors">Beranda</a>
                     <a href="#services" class="hover:text-blue-700 transition-colors">Layanan</a>
                     <a href="#about" class="hover:text-blue-700 transition-colors">Tentang</a>
-                    <a href="#team" class="hover:text-blue-700 transition-colors">Tim</a>
                     <a href="#contact" class="px-5 py-2.5 bg-blue-700 hover:bg-blue-800 text-white rounded font-medium transition-all shadow-md hover:shadow-lg">Hubungi Kami</a>
                 </div>
                 <?php
             }
             ?>
-            <button id="mobile-menu-btn" class="md:hidden text-slate-900">
-                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+            <button id="mobile-menu-btn" class="md:hidden text-slate-900" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobile-menu">
+                <svg id="menu-icon-open" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="12" y2="12"></line><line x1="4" x2="20" y1="6" y2="6"></line><line x1="4" x2="20" y1="18" y2="18"></line></svg>
+                <svg id="menu-icon-close" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" x2="6" y1="6" y2="18"></line><line x1="6" x2="18" y1="6" y2="18"></line></svg>
             </button>
         </div>
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-xl p-6 flex-col gap-4 md:hidden">
-            <a href="<?php echo home_url('/'); ?>" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50">Beranda</a>
-            <a href="#services" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50">Layanan</a>
-            <a href="#about" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50">Tentang</a>
-            <a href="#team" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50">Tim</a>
-            <a href="#contact" class="text-left font-bold text-blue-700 py-2">Hubungi Kami</a>
-        </div>
+        <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-xl p-6 flex-col gap-4 md:hidden" role="navigation" aria-label="Mobile navigation">
+            <a href="<?php echo home_url('/'); ?>" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50 focus:outline-none focus:text-blue-700">Beranda</a>
+            <a href="#services" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50 focus:outline-none focus:text-blue-700">Layanan</a>
+            <a href="#about" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50 focus:outline-none focus:text-blue-700">Tentang</a>
+            <a href="#contact" class="text-left font-bold text-blue-700 py-2 focus:outline-none focus:underline">Hubungi Kami</a>
+        </nav>
     </nav>

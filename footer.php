@@ -53,16 +53,180 @@
 </main>
 
 <script>
-document.getElementById('mobile-menu-btn').addEventListener('click', function() {
-    var menu = document.getElementById('mobile-menu');
-    if (menu.classList.contains('hidden')) {
-        menu.classList.remove('hidden');
-        menu.classList.add('flex');
-    } else {
-        menu.classList.add('hidden');
-        menu.classList.remove('flex');
+(function() {
+    'use strict';
+
+    // ==========================================
+    // Mobile Menu with Accessibility
+    // ==========================================
+    var mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    var mobileMenu = document.getElementById('mobile-menu');
+    var menuIconOpen = document.getElementById('menu-icon-open');
+    var menuIconClose = document.getElementById('menu-icon-close');
+    
+    function toggleMobileMenu() {
+        var isOpen = mobileMenu.classList.contains('flex');
+        
+        if (isOpen) {
+            // Close menu
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+            if (menuIconOpen) menuIconOpen.classList.remove('hidden');
+            if (menuIconClose) menuIconClose.classList.add('hidden');
+        } else {
+            // Open menu
+            mobileMenu.classList.remove('hidden');
+            mobileMenu.classList.add('flex');
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
+            if (menuIconOpen) menuIconOpen.classList.add('hidden');
+            if (menuIconClose) menuIconClose.classList.remove('hidden');
+            // Focus first link for accessibility
+            var firstLink = mobileMenu.querySelector('a');
+            if (firstLink) firstLink.focus();
+        }
     }
-});
+    
+    if (mobileMenuBtn) {
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+    }
+    
+    // Close menu on escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu && mobileMenu.classList.contains('flex')) {
+            toggleMobileMenu();
+            mobileMenuBtn.focus();
+        }
+    });
+    
+    // Close menu when clicking anchor links
+    if (mobileMenu) {
+        var menuLinks = mobileMenu.querySelectorAll('a[href^="#"]');
+        menuLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                toggleMobileMenu();
+            });
+        });
+    }
+
+    // ==========================================
+    // Scroll Animation Observer
+    // ==========================================
+    var animateElements = document.querySelectorAll('.animate-on-scroll, .animate-fade-in-left, .animate-fade-in-right, .animate-scale-in');
+    
+    if ('IntersectionObserver' in window && animateElements.length > 0) {
+        var observer = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        });
+        
+        animateElements.forEach(function(el) {
+            observer.observe(el);
+        });
+    } else {
+        // Fallback for browsers without IntersectionObserver
+        animateElements.forEach(function(el) {
+            el.classList.add('animated');
+        });
+    }
+
+    // ==========================================
+    // Contact Form Handling with WhatsApp
+    // ==========================================
+    var contactForms = document.querySelectorAll('#contact form, #contact-form form, #contact-form-main form, #contact-form-sistemasi form');
+    
+    contactForms.forEach(function(form) {
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var formData = new FormData(form);
+            var inputs = form.querySelectorAll('input, select, textarea');
+            var data = {};
+            var errors = [];
+            
+            // Collect form data
+            inputs.forEach(function(input) {
+                var label = input.previousElementSibling ? input.previousElementSibling.textContent.trim() : input.name;
+                var value = input.value.trim();
+                
+                // Basic validation
+                if (input.required && !value) {
+                    errors.push(label + ' wajib diisi');
+                    input.classList.add('border-red-500');
+                } else {
+                    input.classList.remove('border-red-500');
+                    if (value) {
+                        data[label] = value;
+                    }
+                }
+            });
+            
+            // Show errors if any
+            if (errors.length > 0) {
+                alert('Mohon lengkapi form:\n\n' + errors.join('\n'));
+                return;
+            }
+            
+            // Build WhatsApp message
+            var message = '🏢 *Permintaan Konsultasi Baru*\n\n';
+            for (var key in data) {
+                message += '*' + key + ':* ' + data[key] + '\n';
+            }
+            message += '\n_Dikirim dari website konsulbisnis_';
+            
+            // Encode and open WhatsApp
+            var whatsappNumber = '6281346242556';
+            var whatsappUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
+            
+            // Open in new tab
+            window.open(whatsappUrl, '_blank');
+            
+            // Show success message
+            var submitBtn = form.querySelector('button[type="submit"], button:not([type])');
+            if (submitBtn) {
+                var originalText = submitBtn.textContent;
+                submitBtn.textContent = '✓ Dialihkan ke WhatsApp';
+                submitBtn.disabled = true;
+                submitBtn.classList.add('bg-green-600');
+                submitBtn.classList.remove('bg-blue-700', 'bg-amber-500');
+                
+                setTimeout(function() {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                    submitBtn.classList.remove('bg-green-600');
+                    submitBtn.classList.add('bg-blue-700');
+                    form.reset();
+                }, 3000);
+            }
+        });
+    });
+
+    // ==========================================
+    // Navbar Scroll Effect
+    // ==========================================
+    var navbar = document.getElementById('navbar');
+    if (navbar) {
+        var lastScroll = 0;
+        window.addEventListener('scroll', function() {
+            var currentScroll = window.pageYOffset;
+            
+            if (currentScroll > 100) {
+                navbar.classList.add('shadow-md', 'border-slate-100');
+            } else {
+                navbar.classList.remove('shadow-md', 'border-slate-100');
+            }
+            
+            lastScroll = currentScroll;
+        });
+    }
+})();
 </script>
 
 <?php wp_footer(); ?>

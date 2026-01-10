@@ -2063,8 +2063,8 @@ Text Domain: konsulbisnis
 
 .marquee-content {
     width: max-content;
-    animation: 30s linear infinite marquee-ltr;
-    /* Reverted to LTR */
+    animation: 30s linear infinite marquee;
+    /* Animation Direction: Right to Left */
     display: flex;
 }
 
@@ -2881,6 +2881,7 @@ Text Domain: konsulbisnis
     margin-top: 0.5rem;
 }
 
-.team-card ul li {
-    margin-bottom: 0.25rem;
+.contact-card-bg {
+    background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 50%, #172554 100%);
+    color: white;
 }

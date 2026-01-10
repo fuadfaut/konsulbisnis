@@ -3,13 +3,7 @@
 <section id="hero" class="relative bg-slate-50 overflow-hidden">
     <div class="container mx-auto px-6 py-20 lg:py-32 flex flex-col lg:flex-row items-center gap-12">
         <div class="lg:w-1/2 z-10">
-            <div class="hero-animate inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100 text-amber-800 text-xs font-bold mb-6">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-amber-500 opacity-75"></span>
-                    <span class="relative inline-flex rounded-full h-2 w-2 bg-amber-600"></span>
-                </span>
-                <?php echo esc_html( get_theme_mod( 'hero_tagline', 'KOLABORASI UNTUK BERTUMBUH' ) ); ?>
-            </div>
+
             <h1 class="hero-animate-delay-1 text-4xl lg:text-6xl font-extrabold text-slate-900 leading-[1.1] mb-6">
                 <?php echo esc_html( get_theme_mod( 'hero_title', 'Solusi Bisnis' ) ); ?> <br/>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-amber-500 animate-gradient"><?php echo esc_html( get_theme_mod( 'hero_highlight', 'Terintegrasi' ) ); ?></span>
@@ -56,26 +50,26 @@
         <p class="text-center text-sm text-slate-500 font-medium">Dipercaya oleh berbagai perusahaan dan instansi</p>
     </div>
     <div class="marquee-container">
-        <div class="marquee-content">
+        <div class="marquee-content" style="animation-name: marquee;">
             <div class="flex items-center gap-16 px-8">
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/BI_Logo.png" alt="Bank Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Logo_of_PT_Astra_International_Tbk_terbaru_2025.png" alt="Astra International" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Logo_Bankaltimtara.png" alt="Bank Kaltimtara" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/id/c/c4/Telkom_Indonesia_2013.svg" alt="Telkom Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg" alt="kemenkumham" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">KemenKumHam</span></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Logo_Kementerian_Komunikasi_dan_Digital_Republik_Indonesia_%282024%29.svg" alt="komidigi" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Logo_Kota_Samarinda.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">Pemkot Samarinda</span></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://www.kpc.co.id/wp-content/uploads/2018/10/LogoKPC-e1540438716881.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/BI_Logo.png" alt="Bank Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_of_PT_Astra_International_Tbk_terbaru_2025.png" alt="Astra International" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_Bankaltimtara.png" alt="Bank Kaltimtara" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Telkom_Indonesia_2013.svg" alt="Telkom Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg" alt="kemenkumham" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">KemenKumHam</span></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_Kementerian_Komunikasi_dan_Digital_Republik_Indonesia_-282024-29.svg" alt="komidigi" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_Kota_Samarinda.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">Pemkot Samarinda</span></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/LogoKPC-e1540438716881.png" alt="KPC" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
             </div>
             <div class="flex items-center gap-16 px-8">
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/BI_Logo.png" alt="Bank Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Logo_of_PT_Astra_International_Tbk_terbaru_2025.png" alt="Astra International" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Logo_Bankaltimtara.png" alt="Bank Kaltimtara" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/id/c/c4/Telkom_Indonesia_2013.svg" alt="Telkom Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg" alt="kemenkumham" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">KemenKumHam</span></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Logo_Kementerian_Komunikasi_dan_Digital_Republik_Indonesia_%282024%29.svg" alt="komidigi" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Logo_Kota_Samarinda.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">Pemkot Samarinda</span></div>
-                <div class="flex flex-col items-center min-w-[150px]"><img src="https://www.kpc.co.id/wp-content/uploads/2018/10/LogoKPC-e1540438716881.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/BI_Logo.png" alt="Bank Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_of_PT_Astra_International_Tbk_terbaru_2025.png" alt="Astra International" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_Bankaltimtara.png" alt="Bank Kaltimtara" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Telkom_Indonesia_2013.svg" alt="Telkom Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg" alt="kemenkumham" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">KemenKumHam</span></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_Kementerian_Komunikasi_dan_Digital_Republik_Indonesia_-282024-29.svg" alt="komidigi" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/Logo_Kota_Samarinda.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">Pemkot Samarinda</span></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/LogoKPC-e1540438716881.png" alt="KPC" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
             </div>
         </div>
     </div>
@@ -83,7 +77,7 @@
 
 <section id="services" class="py-16 bg-white">
     <div class="container mx-auto px-6">
-        <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6 animate-on-scroll">
             <div class="max-w-2xl">
                 <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4"><?php echo esc_html( get_theme_mod( 'home_service_title', 'Pelayanan Kami' ) ); ?></h2>
                 <p class="text-slate-600 text-lg"><?php echo nl2br( esc_html( get_theme_mod( 'home_service_desc', 'Kami menyediakan layanan lengkap untuk mendukung pertumbuhan bisnis Anda, dari perpajakan hingga transformasi digital.' ) ) ); ?></p>
@@ -121,7 +115,7 @@
                 $post = $special_service;
                 setup_postdata( $post );
                 ?>
-                <div class="lg:w-1/3 min-h-full">
+                <div class="lg:w-1/3 min-h-full animate-fade-in-left">
                     <div class="h-full bg-gradient-to-br from-blue-900 to-slate-900 text-white p-10 rounded-2xl flex flex-col justify-between relative overflow-hidden group hover:shadow-2xl transition-all duration-300">
                         <div class="absolute top-0 right-0 w-64 h-64 bg-amber-500 rounded-full blur-[80px] opacity-20 group-hover:opacity-30 transition-opacity"></div>
                         <div class="relative z-10">
@@ -146,7 +140,7 @@
                 foreach ( $other_services as $post ) :
                     setup_postdata( $post );
                     ?>
-                    <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between h-full">
+                    <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between h-full animate-on-scroll">
                         <div>
                             <div class="flex items-start justify-between mb-6">
                                 <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
@@ -173,10 +167,10 @@
 <section id="about" class="py-24 bg-slate-900 text-white relative">
     <div class="container mx-auto px-6 relative z-10">
         <div class="flex flex-col lg:flex-row gap-16 items-center">
-            <div class="lg:w-1/2">
-                <h2 class="text-3xl lg:text-4xl font-bold mb-6">Tentang Kami</h2>
-                <p class="text-slate-300 text-lg mb-6 leading-relaxed">PT Kami Bantu Konsultan adalah perseroan perorangan yang bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan di bidang Information Technology khususnya penyedia aplikasi keuangan dan bisnis.</p>
-                <p class="text-slate-400 mb-8 leading-relaxed">Didirikan atas dasar keprihatinan terhadap rendahnya literasi keuangan masyarakat, serta ketidakpahaman para pelaku ekonomi utamanya UMKM dalam tata kelola keuangan, perpajakan, dan manajemen. Kami memiliki visi menjadi perusahaan penyedia jasa yang edukatif dan solutif bagi klien dengan motto <strong class="text-white">"Kolaborasi untuk Bertumbuh"</strong>.</p>
+            <div class="lg:w-1/2 animate-fade-in-left">
+                <h2 class="text-3xl lg:text-4xl font-bold mb-6"><?php echo esc_html( get_theme_mod( 'about_title', 'Tentang Kami' ) ); ?></h2>
+                <p class="text-slate-300 text-lg mb-6 leading-relaxed"><?php echo nl2br( esc_html( get_theme_mod( 'about_desc', 'PT Kami Bantu Konsultan adalah perseroan perorangan yang bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan di bidang Information Technology khususnya penyedia aplikasi keuangan dan bisnis.' ) ) ); ?></p>
+                <p class="text-slate-400 mb-8 leading-relaxed"><?php echo nl2br( esc_html( get_theme_mod( 'about_desc_2', 'Didirikan atas dasar keprihatinan terhadap rendahnya literasi keuangan masyarakat, serta ketidakpahaman para pelaku ekonomi utamanya UMKM dalam tata kelola keuangan, perpajakan, dan manajemen. Kami memiliki visi menjadi perusahaan penyedia jasa yang edukatif dan solutif bagi klien dengan motto "Kolaborasi untuk Bertumbuh".' ) ) ); ?></p>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1">50+</h4><p class="text-sm text-slate-400">Klien Aktif</p></div>
                     <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1">30+</h4><p class="text-sm text-slate-400">Proyek IT</p></div>
@@ -184,7 +178,7 @@
                     <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1">5</h4><p class="text-sm text-slate-400">Tim Profesional</p></div>
                 </div>
             </div>
-            <div id="process" class="lg:w-1/2">
+            <div id="process" class="lg:w-1/2 animate-fade-in-right">
                 <h3 class="text-2xl font-bold mb-6">Klien & Mitra Kami</h3>
                 <p class="text-slate-400 mb-6">Kami telah membantu klien dari berbagai perusahaan, badan organisasi, lembaga pemerintah dan perorangan.</p>
                 <div class="grid grid-cols-2 gap-4">
@@ -200,23 +194,120 @@
     </div>
 </section>
 
-<section id="contact" class="py-24 bg-white">
+<section id="contact" class="py-24 bg-slate-100">
     <div class="container mx-auto px-6">
-        <div class="max-w-4xl mx-auto bg-slate-50 rounded-3xl shadow-xl overflow-hidden p-8 md:p-12">
-            <div class="text-center mb-10">
-                <h2 class="text-3xl font-bold text-slate-900 mb-4">Hubungi Kami</h2>
-                <p class="text-slate-600">Siap merapikan keuangan dan mensistemasi bisnis Anda?</p>
-            </div>
-            <form class="space-y-6">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div><label class="block text-sm font-semibold text-slate-700 mb-2">Nama Lengkap</label><input type="text" class="w-full px-4 py-3 bg-white border border-slate-200 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" placeholder="John Doe"/></div>
-                    <div><label class="block text-sm font-semibold text-slate-700 mb-2">Nama Perusahaan</label><input type="text" class="w-full px-4 py-3 bg-white border border-slate-200 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" placeholder="PT Sukses Mulia"/></div>
+        <div class="flex flex-col lg:flex-row gap-0 max-w-6xl mx-auto rounded-3xl overflow-hidden shadow-2xl animate-on-scroll">
+            <!-- Left Column - Contact Info with Image -->
+            <div class="lg:w-5/12 relative overflow-hidden text-white min-h-[500px]" style="background: linear-gradient(135deg, #1d4ed8 0%, #1e40af 50%, #172554 100%);">
+                <!-- Background Image -->
+                <div class="absolute inset-0 opacity-20">
+                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/follow.svg" alt="" class="w-full h-full object-cover"/>
                 </div>
-                <div><label class="block text-sm font-semibold text-slate-700 mb-2">Email / WhatsApp</label><input type="text" class="w-full px-4 py-3 bg-white border border-slate-200 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" placeholder="kontak@email.com"/></div>
-                <div><label class="block text-sm font-semibold text-slate-700 mb-2">Topik Konsultasi</label><select class="w-full px-4 py-3 bg-white border border-slate-200 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition cursor-pointer"><option>IT Konsultan & Sistem Informasi</option><option>Jasa Perpajakan</option><option>Jasa Audit</option><option>Perencanaan Keuangan</option><option>Studi Kelayakan Bisnis</option><option>Digital Marketing</option></select></div>
-                <div><label class="block text-sm font-semibold text-slate-700 mb-2">Deskripsi Kebutuhan</label><textarea class="w-full px-4 py-3 bg-white border border-slate-200 rounded focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition h-32" placeholder="Ceritakan kebutuhan bisnis Anda..."></textarea></div>
-                <button class="w-full py-4 bg-blue-700 text-white font-bold rounded hover:bg-blue-800 transition shadow-lg hover:shadow-xl transform active:scale-[0.99]">Kirim Pesan</button>
-            </form>
+                
+                <!-- Overlay gradient for readability -->
+                <div class="absolute inset-0 bg-gradient-to-br from-blue-900/80 via-blue-800/60 to-blue-900/80"></div>
+                
+                <div class="relative z-10 p-10 lg:p-12 h-full flex flex-col">
+                    <h2 class="text-3xl lg:text-4xl font-bold mb-4 text-white"><?php echo esc_html( get_theme_mod( 'contact_title', 'Hubungi Kami' ) ); ?></h2>
+                    <p class="text-blue-100 mb-10 leading-relaxed">
+                        <?php echo nl2br( esc_html( get_theme_mod( 'contact_desc', 'Siap merapikan keuangan dan mensistemasi bisnis Anda? Konsultasi awal gratis.' ) ) ); ?>
+                    </p>
+                    
+                    <!-- Contact Details -->
+                    <div class="space-y-6 flex-grow">
+                        <!-- Kantor -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-200"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Kantor</h4>
+                                <p class="text-blue-200 text-sm leading-relaxed"><?php echo esc_html( get_theme_mod( 'footer_address', 'Jl. Jend A.Yani (Eks.Cendrawasih) Ruko No 1B, Kel. Temindung Kec. Samarinda Kota, Kota Samarinda, Kalimantan Timur 75117' ) ); ?></p>
+                            </div>
+                        </div>
+                        
+                        <!-- WhatsApp -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-200"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">WhatsApp</h4>
+                                <p class="text-blue-200 text-sm"><?php echo esc_html( get_theme_mod( 'footer_phone1', '0813-4624-2556' ) ); ?></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Email -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-200"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Email</h4>
+                                <p class="text-blue-200 text-sm"><?php echo esc_html( get_theme_mod( 'footer_email', 'KonsultanKamiBantu@gmail.com' ) ); ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="mt-8 pt-6 border-t border-white/10">
+                        <div class="flex items-start gap-4">
+                            <a href="https://kamibantu.co" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center w-10 h-10 bg-white/10 hover:bg-white/20 rounded-lg transition-colors shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-white"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                            </a>
+                            <div class="flex flex-col justify-center h-10">
+                                <h4 class="font-bold text-white text-sm mb-0">Instagram</h4>
+                                <a href="https://kamibantu.co" target="_blank" rel="noopener noreferrer" class="text-blue-200 text-sm hover:text-white transition-colors">@kamibantu.co</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Right Column - Form -->
+            <div class="lg:w-7/12 bg-white p-10 lg:p-12">
+                <div class="mb-8">
+                    <h2 class="text-2xl lg:text-3xl font-bold text-slate-900 mb-2">Konsultasi via WhatsApp</h2>
+                    <p class="text-slate-500">Isi form di bawah untuk memulai konsultasi</p>
+                </div>
+                
+                <form class="space-y-6" id="contact-form-main">
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="nama" class="block text-sm font-semibold text-slate-700 mb-2">Nama</label>
+                            <input type="text" id="nama" name="nama" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" placeholder="Nama Anda"/>
+                        </div>
+                        <div>
+                            <label for="perusahaan" class="block text-sm font-semibold text-slate-700 mb-2">Perusahaan</label>
+                            <input type="text" id="perusahaan" name="perusahaan" class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" placeholder="PT ABC"/>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="kontak" class="block text-sm font-semibold text-slate-700 mb-2">WhatsApp</label>
+                        <input type="text" id="kontak" name="kontak" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition" placeholder="08123456789"/>
+                    </div>
+                    <div>
+                        <label for="topik" class="block text-sm font-semibold text-slate-700 mb-2">Topik</label>
+                        <select id="topik" name="topik" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition cursor-pointer">
+                            <option value="">Pilih Topik...</option>
+                            <option value="IT Konsultan & Sistem Informasi">IT Konsultan & Sistem Informasi</option>
+                            <option value="Jasa Perpajakan">Jasa Perpajakan</option>
+                            <option value="Jasa Audit">Jasa Audit</option>
+                            <option value="Perencanaan Keuangan">Perencanaan Keuangan</option>
+                            <option value="Studi Kelayakan Bisnis">Studi Kelayakan Bisnis</option>
+                            <option value="Digital Marketing">Digital Marketing</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="deskripsi" class="block text-sm font-semibold text-slate-700 mb-2">Pesan</label>
+                        <textarea id="deskripsi" name="deskripsi" required class="w-full px-4 py-3 bg-slate-50 border border-slate-200 rounded-lg focus:border-blue-500 focus:ring-1 focus:ring-blue-500 outline-none transition h-28 resize-none" placeholder="Ceritakan kebutuhan Anda..."></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-4 bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold rounded-lg transition-all shadow-lg hover:shadow-xl transform active:scale-[0.99] flex items-center justify-center gap-2">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" class="text-slate-900"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        Kirim via WhatsApp
+                    </button>
+                </form>
+            </div>
         </div>
     </div>
 </section>
