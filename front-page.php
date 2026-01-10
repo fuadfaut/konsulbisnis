@@ -51,6 +51,36 @@
     </div>
 </section>
 
+<section class="py-6 bg-slate-50 border-y border-slate-100">
+    <div class="container mx-auto px-6 mb-4">
+        <p class="text-center text-sm text-slate-500 font-medium">Dipercaya oleh berbagai perusahaan dan instansi</p>
+    </div>
+    <div class="marquee-container">
+        <div class="marquee-content">
+            <div class="flex items-center gap-16 px-8">
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/BI_Logo.png" alt="Bank Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Logo_of_PT_Astra_International_Tbk_terbaru_2025.png" alt="Astra International" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Logo_Bankaltimtara.png" alt="Bank Kaltimtara" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/id/c/c4/Telkom_Indonesia_2013.svg" alt="Telkom Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg" alt="kemenkumham" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">KemenKumHam</span></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Logo_Kementerian_Komunikasi_dan_Digital_Republik_Indonesia_%282024%29.svg" alt="komidigi" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Logo_Kota_Samarinda.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">Pemkot Samarinda</span></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://www.kpc.co.id/wp-content/uploads/2018/10/LogoKPC-e1540438716881.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+            </div>
+            <div class="flex items-center gap-16 px-8">
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/3/39/BI_Logo.png" alt="Bank Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Logo_of_PT_Astra_International_Tbk_terbaru_2025.png" alt="Astra International" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Logo_Bankaltimtara.png" alt="Bank Kaltimtara" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/id/c/c4/Telkom_Indonesia_2013.svg" alt="Telkom Indonesia" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/e/ee/Logo_of_the_Ministry_of_Law_and_Human_Rights_of_the_Republic_of_Indonesia.svg" alt="kemenkumham" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">KemenKumHam</span></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/Logo_Kementerian_Komunikasi_dan_Digital_Republik_Indonesia_%282024%29.svg" alt="komidigi" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/Logo_Kota_Samarinda.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"><span class="text-lg font-bold text-slate-700">Pemkot Samarinda</span></div>
+                <div class="flex flex-col items-center min-w-[150px]"><img src="https://www.kpc.co.id/wp-content/uploads/2018/10/LogoKPC-e1540438716881.png" alt="pemkot Samarinda" class="h-10 object-contain grayscale hover:grayscale-0 transition-all"></div>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="services" class="py-16 bg-white">
     <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6">

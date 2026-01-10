@@ -418,7 +418,6 @@ Text Domain: konsulbisnis
     iframe,
     embed,
     object {
-        vertical-align: middle;
         display: block
     }
 
@@ -2065,7 +2064,7 @@ Text Domain: konsulbisnis
 .marquee-content {
     width: max-content;
     animation: 30s linear infinite marquee-ltr;
-    /* Changed to LTR */
+    /* Reverted to LTR */
     display: flex;
 }
 
