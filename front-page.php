@@ -12,11 +12,18 @@
                 <?php echo nl2br( esc_html( get_theme_mod( 'hero_desc', 'PT Kami Bantu Konsultan bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan IT. Kami membantu pelaku usaha dalam menerapkan prinsip pengelolaan bisnis yang sesuai standar.' ) ) ); ?>
             </p>
             <div class="hero-animate-delay-3 flex flex-col sm:flex-row gap-4">
-                <button class="btn-ripple pulse-glow px-8 py-4 bg-blue-700 text-white font-semibold rounded hover:bg-amber-500 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl" onclick="document.getElementById('contact').scrollIntoView({behavior: 'smooth'})">
-                    Jadwalkan Konsultasi
+                <?php if ( get_theme_mod( 'hero_btn1_show', true ) ) : ?>
+                <button class="btn-ripple pulse-glow px-8 py-4 bg-blue-700 text-white font-semibold rounded hover:bg-amber-500 transition-all flex items-center justify-center gap-2 shadow-lg hover:shadow-xl" onclick="window.location.href='<?php echo esc_url( get_theme_mod( 'hero_btn1_url', '#contact' ) ); ?>'">
+                    <?php echo esc_html( get_theme_mod( 'hero_btn1_text', 'Jadwalkan Konsultasi' ) ); ?>
                     <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
                 </button>
-                <button class="px-8 py-4 bg-white text-slate-700 border border-slate-300 font-semibold rounded hover:bg-slate-50 transition-all" onclick="document.getElementById('services').scrollIntoView({behavior: 'smooth'})">Lihat Layanan</button>
+                <?php endif; ?>
+                
+                <?php if ( get_theme_mod( 'hero_btn2_show', true ) ) : ?>
+                <button class="px-8 py-4 bg-white text-slate-700 border border-slate-300 font-semibold rounded hover:bg-slate-50 transition-all" onclick="window.location.href='<?php echo esc_url( get_theme_mod( 'hero_btn2_url', '#services' ) ); ?>'">
+                    <?php echo esc_html( get_theme_mod( 'hero_btn2_text', 'Lihat Layanan' ) ); ?>
+                </button>
+                <?php endif; ?>
             </div>
         </div>
         <div class="lg:w-1/2 relative hero-image-animate">
@@ -149,7 +156,7 @@
                             </div>
                             <h3 class="text-xl font-bold text-slate-900 mb-3"><?php the_title(); ?></h3>
                             <?php edit_post_link( '✎ Edit', '<span class="text-xs text-blue-500 hover:underline mb-2 block">', '</span>' ); ?>
-                            <div class="text-slate-600 text-sm mb-6 leading-relaxed [&>ul]:list-disc [&>ul]:pl-4 [&>ol]:list-decimal [&>ol]:pl-4 [&>li]:mb-1 [&>p]:mb-2">
+                            <div class="text-slate-600 text-sm mb-6 leading-relaxed [&>ul]:space-y-2 [&>p]:mb-3 [&>ul>li]:flex [&>ul>li]:items-start [&>ul>li]:gap-2 [&>ul>li]:before:content-['✓'] [&>ul>li]:before:text-blue-500 [&>ul>li]:before:font-bold">
                                 <?php the_content(); ?>
                             </div>
                         </div>
@@ -164,6 +171,7 @@
     </div>
 </section>
 
+<?php if ( get_theme_mod( 'about_show', true ) ) : ?>
 <section id="about" class="py-24 bg-slate-900 text-white relative">
     <div class="container mx-auto px-6 relative z-10">
         <div class="flex flex-col lg:flex-row gap-16 items-center">
@@ -193,6 +201,7 @@
         </div>
     </div>
 </section>
+<?php endif; ?>
 
 <section id="contact" class="py-24 bg-slate-100">
     <div class="container mx-auto px-6">
@@ -313,3 +322,4 @@
 </section>
 
 <?php get_footer(); ?>
+

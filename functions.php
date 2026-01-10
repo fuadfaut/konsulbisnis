@@ -1,6 +1,6 @@
 <?php
 function konsulbisnis_scripts() {
-    wp_enqueue_style( 'konsulbisnis-style', get_stylesheet_uri() );
+    wp_enqueue_style( 'konsulbisnis-style', get_stylesheet_uri(), array(), '1.0.3' );
 }
 add_action( 'wp_enqueue_scripts', 'konsulbisnis_scripts' );
 
@@ -162,6 +162,26 @@ function konsulbisnis_customize_register( $wp_customize ) {
         'type'     => 'text',
     ) );
 
+    // Hero Button 1 (Main)
+    $wp_customize->add_setting( 'hero_btn1_text', array( 'default' => 'Konsultasi Sekarang' ) );
+    $wp_customize->add_control( 'hero_btn1_text', array( 'label' => 'Teks Tombol Utama', 'section' => 'konsulbisnis_hero', 'type' => 'text' ) );
+    
+    $wp_customize->add_setting( 'hero_btn1_url', array( 'default' => '#contact' ) );
+    $wp_customize->add_control( 'hero_btn1_url', array( 'label' => 'Link Tombol Utama', 'section' => 'konsulbisnis_hero', 'type' => 'text' ) );
+
+    $wp_customize->add_setting( 'hero_btn1_show', array( 'default' => true ) );
+    $wp_customize->add_control( 'hero_btn1_show', array( 'label' => 'Tampilkan Tombol Utama?', 'section' => 'konsulbisnis_hero', 'type' => 'checkbox' ) );
+
+    // Hero Button 2 (Secondary)
+    $wp_customize->add_setting( 'hero_btn2_text', array( 'default' => 'Pelajari Layanan' ) );
+    $wp_customize->add_control( 'hero_btn2_text', array( 'label' => 'Teks Tombol Kedua', 'section' => 'konsulbisnis_hero', 'type' => 'text' ) );
+    
+    $wp_customize->add_setting( 'hero_btn2_url', array( 'default' => '#services' ) );
+    $wp_customize->add_control( 'hero_btn2_url', array( 'label' => 'Link Tombol Kedua', 'section' => 'konsulbisnis_hero', 'type' => 'text' ) );
+
+    $wp_customize->add_setting( 'hero_btn2_show', array( 'default' => true ) );
+    $wp_customize->add_control( 'hero_btn2_show', array( 'label' => 'Tampilkan Tombol Kedua?', 'section' => 'konsulbisnis_hero', 'type' => 'checkbox' ) );
+
     // Hero Title
     $wp_customize->add_setting( 'hero_title', array( 'default' => 'Solusi Bisnis' ) );
     $wp_customize->add_control( 'hero_title', array(
@@ -243,6 +263,13 @@ function konsulbisnis_customize_register( $wp_customize ) {
         'label'    => __( 'Deskripsi Paragraf 2', 'konsulbisnis' ),
         'section'  => 'konsulbisnis_about',
         'type'     => 'textarea',
+    ) );
+
+    $wp_customize->add_setting( 'about_show', array( 'default' => true ) );
+    $wp_customize->add_control( 'about_show', array(
+        'label'    => __( 'Tampilkan Bagian Tentang Kami / Klien?', 'konsulbisnis' ),
+        'section'  => 'konsulbisnis_about',
+        'type'     => 'checkbox',
     ) );
 
     // --- Contact Section ---

@@ -54,6 +54,7 @@
                     'theme_location' => 'primary',
                     'container'      => false,
                     'menu_class'     => 'hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600 list-none m-0 p-0',
+                    'menu_id'        => 'primary-menu',
                     'fallback_cb'    => false,
                 ) );
             } else {
