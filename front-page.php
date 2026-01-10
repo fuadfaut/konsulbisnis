@@ -180,23 +180,57 @@
                 <p class="text-slate-300 text-lg mb-6 leading-relaxed"><?php echo nl2br( esc_html( get_theme_mod( 'about_desc', 'PT Kami Bantu Konsultan adalah perseroan perorangan yang bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan di bidang Information Technology khususnya penyedia aplikasi keuangan dan bisnis.' ) ) ); ?></p>
                 <p class="text-slate-400 mb-8 leading-relaxed"><?php echo nl2br( esc_html( get_theme_mod( 'about_desc_2', 'Didirikan atas dasar keprihatinan terhadap rendahnya literasi keuangan masyarakat, serta ketidakpahaman para pelaku ekonomi utamanya UMKM dalam tata kelola keuangan, perpajakan, dan manajemen. Kami memiliki visi menjadi perusahaan penyedia jasa yang edukatif dan solutif bagi klien dengan motto "Kolaborasi untuk Bertumbuh".' ) ) ); ?></p>
                 <div class="grid grid-cols-2 gap-6">
-                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1">50+</h4><p class="text-sm text-slate-400">Klien Aktif</p></div>
-                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1">30+</h4><p class="text-sm text-slate-400">Proyek IT</p></div>
-                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1">5+</h4><p class="text-sm text-slate-400">Tahun Pengalaman</p></div>
-                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1">5</h4><p class="text-sm text-slate-400">Tim Profesional</p></div>
+                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1"><?php echo esc_html( get_theme_mod( 'stat_clients_num', '50+' ) ); ?></h4><p class="text-sm text-slate-400">Klien Aktif</p></div>
+                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1"><?php echo esc_html( get_theme_mod( 'stat_projects_num', '30+' ) ); ?></h4><p class="text-sm text-slate-400">Proyek IT</p></div>
+                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1"><?php echo esc_html( get_theme_mod( 'stat_experience_num', '5+' ) ); ?></h4><p class="text-sm text-slate-400">Tahun Pengalaman</p></div>
+                    <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1"><?php echo esc_html( get_theme_mod( 'stat_team_num', '5' ) ); ?></h4><p class="text-sm text-slate-400">Tim Profesional</p></div>
                 </div>
             </div>
             <div id="process" class="lg:w-1/2 animate-fade-in-right">
                 <h3 class="text-2xl font-bold mb-6">Klien & Mitra Kami</h3>
                 <p class="text-slate-400 mb-6">Kami telah membantu klien dari berbagai perusahaan, badan organisasi, lembaga pemerintah dan perorangan.</p>
                 <div class="grid grid-cols-2 gap-4">
-                    <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">Bank Indonesia Kaltmara</p><p class="text-xs text-slate-500">Pembuatan Website</p></div>
-                    <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">PT Astra International</p><p class="text-xs text-slate-500">Aplikasi LISA</p></div>
-                    <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">Pemerintah Kota Samarinda</p><p class="text-xs text-slate-500">Kontrak Website</p></div>
-                    <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">KemenKumHam Kaltmara</p><p class="text-xs text-slate-500">E-Lasikum.id</p></div>
-                    <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">Diskominfo Prov. Kaltmara</p><p class="text-xs text-slate-500">Aplikasi COVID</p></div>
-                    <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">Bank Kaltmara</p><p class="text-xs text-slate-500">Pelatihan MS Office</p></div>
+                    <?php
+                    $about_clients_query = new WP_Query( array(
+                        'post_type' => 'client',
+                        'posts_per_page' => 6,
+                        'orderby' => 'menu_order',
+                        'order' => 'ASC',
+                    ) );
+
+                    if ( $about_clients_query->have_posts() ) :
+                        while ( $about_clients_query->have_posts() ) : $about_clients_query->the_post();
+                            $client_name = get_the_title();
+                            $client_desc = get_post_meta( get_the_ID(), 'client_project_desc', true );
+                            ?>
+                            <div class="p-4 bg-slate-800 rounded-lg border border-slate-700 hover:border-amber-500 transition-colors">
+                                <p class="font-semibold text-sm"><?php echo esc_html( $client_name ); ?></p>
+                                <?php if ( $client_desc ) : ?>
+                                    <p class="text-xs text-slate-500"><?php echo esc_html( $client_desc ); ?></p>
+                                <?php endif; ?>
+                            </div>
+                        <?php endwhile;
+                        wp_reset_postdata();
+                    else :
+                        ?>
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">Bank Indonesia Kaltmara</p><p class="text-xs text-slate-500">Pembuatan Website</p></div>
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">PT Astra International</p><p class="text-xs text-slate-500">Aplikasi LISA</p></div>
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">Pemerintah Kota Samarinda</p><p class="text-xs text-slate-500">Kontrak Website</p></div>
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">KemenKumHam Kaltmara</p><p class="text-xs text-slate-500">E-Lasikum.id</p></div>
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">Diskominfo Prov. Kaltmara</p><p class="text-xs text-slate-500">Aplikasi COVID</p></div>
+                        <div class="p-4 bg-slate-800 rounded-lg border border-slate-700"><p class="font-semibold text-sm">Bank Kaltmara</p><p class="text-xs text-slate-500">Pelatihan MS Office</p></div>
+                    <?php endif; ?>
                 </div>
+                <?php
+                $total_clients = wp_count_posts( 'client' )->publish;
+                if ( $total_clients > 6 ) :
+                ?>
+                    <div class="mt-4 text-center">
+                        <a href="<?php echo get_post_type_archive_link( 'client' ); ?>" class="text-amber-400 hover:text-amber-300 text-sm font-semibold transition-colors">
+                            Lihat Semua Klien (<?php echo $total_clients; ?>) →
+                        </a>
+                    </div>
+                <?php endif; ?>
             </div>
         </div>
     </div>

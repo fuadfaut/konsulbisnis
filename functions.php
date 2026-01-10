@@ -50,11 +50,15 @@ function konsulbisnis_cpt() {
         'labels' => array(
             'name' => __( 'Klien', 'konsulbisnis' ),
             'singular_name' => __( 'Klien', 'konsulbisnis' ),
+            'add_new' => __( 'Tambah Klien', 'konsulbisnis' ),
+            'add_new_item' => __( 'Tambah Klien Baru', 'konsulbisnis' ),
+            'edit_item' => __( 'Edit Klien', 'konsulbisnis' ),
         ),
         'public' => true,
         'has_archive' => false,
         'menu_icon' => 'dashicons-building',
-        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'custom-fields' ), // Title = Client Name, Thumbnail = Logo, Editor = Project Description, Custom Fields = Category/Role
+        'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'page-attributes' ),
+        'show_in_rest' => true,
     ) );
 }
 add_action( 'init', 'konsulbisnis_cpt' );
@@ -272,6 +276,35 @@ function konsulbisnis_customize_register( $wp_customize ) {
         'type'     => 'checkbox',
     ) );
 
+    // --- Statistics ---
+    $wp_customize->add_setting( 'stat_clients_num', array( 'default' => '50+' ) );
+    $wp_customize->add_control( 'stat_clients_num', array(
+        'label'    => __( 'Jumlah Klien Aktif', 'konsulbisnis' ),
+        'section'  => 'konsulbisnis_about',
+        'type'     => 'text',
+    ) );
+
+    $wp_customize->add_setting( 'stat_projects_num', array( 'default' => '30+' ) );
+    $wp_customize->add_control( 'stat_projects_num', array(
+        'label'    => __( 'Jumlah Proyek IT', 'konsulbisnis' ),
+        'section'  => 'konsulbisnis_about',
+        'type'     => 'text',
+    ) );
+
+    $wp_customize->add_setting( 'stat_experience_num', array( 'default' => '5+' ) );
+    $wp_customize->add_control( 'stat_experience_num', array(
+        'label'    => __( 'Tahun Pengalaman', 'konsulbisnis' ),
+        'section'  => 'konsulbisnis_about',
+        'type'     => 'text',
+    ) );
+
+    $wp_customize->add_setting( 'stat_team_num', array( 'default' => '5' ) );
+    $wp_customize->add_control( 'stat_team_num', array(
+        'label'    => __( 'Jumlah Tim Profesional', 'konsulbisnis' ),
+        'section'  => 'konsulbisnis_about',
+        'type'     => 'text',
+    ) );
+
     // --- Contact Section ---
     $wp_customize->add_section( 'konsulbisnis_contact_text', array(
         'title'       => __( 'Contact Section Texts', 'konsulbisnis' ),
@@ -368,6 +401,69 @@ function konsulbisnis_customize_register( $wp_customize ) {
 
 }
 add_action( 'customize_register', 'konsulbisnis_customize_register' );
+
+// ==========================================
+// Client Meta Box for Project Details
+// ==========================================
+function konsulbisnis_client_meta_boxes() {
+    add_meta_box(
+        'client_details',
+        __( 'Detail Klien', 'konsulbisnis' ),
+        'konsulbisnis_client_meta_box_callback',
+        'client',
+        'normal',
+        'high'
+    );
+}
+add_action( 'add_meta_boxes', 'konsulbisnis_client_meta_boxes' );
+
+function konsulbisnis_client_meta_box_callback( $post ) {
+    wp_nonce_field( 'konsulbisnis_client_meta', 'konsulbisnis_client_meta_nonce' );
+    
+    $project_desc = get_post_meta( $post->ID, 'client_project_desc', true );
+    $category = get_post_meta( $post->ID, 'client_category', true );
+    ?>
+    <table class="form-table">
+        <tr>
+            <th><label for="client_project_desc"><?php _e( 'Deskripsi Proyek', 'konsulbisnis' ); ?></label></th>
+            <td>
+                <textarea id="client_project_desc" name="client_project_desc" rows="3" class="large-text"><?php echo esc_attr( $project_desc ); ?></textarea>
+                <p class="description"><?php _e( 'Deskripsi singkat proyek atau kerjasama dengan klien ini', 'konsulbisnis' ); ?></p>
+            </td>
+        </tr>
+        <tr>
+            <th><label for="client_category"><?php _e( 'Kategori', 'konsulbisnis' ); ?></label></th>
+            <td>
+                <input type="text" id="client_category" name="client_category" value="<?php echo esc_attr( $category ); ?>" class="regular-text" placeholder="Contoh: BUMN, Pemerintah, Swasta" />
+                <p class="description"><?php _e( 'Kategori klien (opsional)', 'konsulbisnis' ); ?></p>
+            </td>
+        </tr>
+    </table>
+    <?php
+}
+
+function konsulbisnis_save_client_meta( $post_id ) {
+    if ( ! isset( $_POST['konsulbisnis_client_meta_nonce'] ) ) {
+        return;
+    }
+    if ( ! wp_verify_nonce( $_POST['konsulbisnis_client_meta_nonce'], 'konsulbisnis_client_meta' ) ) {
+        return;
+    }
+    if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+        return;
+    }
+    if ( ! current_user_can( 'edit_post', $post_id ) ) {
+        return;
+    }
+    
+    if ( isset( $_POST['client_project_desc'] ) ) {
+        update_post_meta( $post_id, 'client_project_desc', sanitize_textarea_field( $_POST['client_project_desc'] ) );
+    }
+    if ( isset( $_POST['client_category'] ) ) {
+        update_post_meta( $post_id, 'client_category', sanitize_text_field( $_POST['client_category'] ) );
+    }
+}
+add_action( 'save_post_client', 'konsulbisnis_save_client_meta' );
 
 // ==========================================
 // Team Member Meta Box for Role & Credentials
