@@ -4,6 +4,11 @@ function konsulbisnis_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'konsulbisnis_scripts' );
 
+function konsulbisnis_editor_scripts() {
+    wp_enqueue_style( 'konsulbisnis-editor-style', get_stylesheet_uri(), array(), '1.0.3' );
+}
+add_action( 'enqueue_block_editor_assets', 'konsulbisnis_editor_scripts' );
+
 function konsulbisnis_setup() {
     add_theme_support( 'custom-logo', array(
         'height'      => 100,
