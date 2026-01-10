@@ -12,6 +12,8 @@ function konsulbisnis_setup() {
         'flex-width'  => true,
     ) );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'style.css' );
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'konsulbisnis' ),
         'footer'  => __( 'Footer Menu', 'konsulbisnis' ),
@@ -557,4 +559,10 @@ function konsulbisnis_whatsapp_customize( $wp_customize ) {
     ) );
 }
 add_action( 'customize_register', 'konsulbisnis_whatsapp_customize' );
+
+/**
+ * Load Gutenberg features.
+ */
+require_once get_template_directory() . '/inc/shortcodes.php';
+require_once get_template_directory() . '/inc/patterns.php';
 ?>
