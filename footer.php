@@ -3,7 +3,16 @@
         <div class="grid md:grid-cols-4 gap-12 mb-12">
             <div class="col-span-1 md:col-span-2">
                 <div class="flex items-center gap-3 mb-6">
-                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/logo.png" alt="Logo PT. Kami Bantu Konsultan" class="w-10 h-10 rounded"/>
+                    <?php
+                    if ( has_custom_logo() ) {
+                         $custom_logo_id = get_theme_mod( 'custom_logo' );
+                         $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                         echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '" class="rounded" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;"/>';
+                    } else {
+                         // Fallback logo
+                         echo '<img src="https://placehold.co/40x40/blue/white?text=KB" alt="Placeholder Logo" class="rounded" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;"/>';
+                    }
+                    ?>
                     <div>
                         <span class="text-xl font-bold">KONSULBISNIS</span>
                         <p class="text-xs text-slate-400">PT Kami Bantu Konsultan</p>
@@ -140,6 +149,9 @@
     // ==========================================
     // Contact Form Handling with WhatsApp
     // ==========================================
+    // Pass PHP data to JS
+    var whatsappNumber = '<?php echo esc_js( get_theme_mod( 'whatsapp_number', '6281346242556' ) ); ?>';
+
     var contactForms = document.querySelectorAll('#contact form, #contact-form form, #contact-form-main form, #contact-form-sistemasi form');
     
     contactForms.forEach(function(form) {
@@ -182,7 +194,6 @@
             message += '\n_Dikirim dari website konsulbisnis_';
             
             // Encode and open WhatsApp
-            var whatsappNumber = '6281346242556';
             var whatsappUrl = 'https://wa.me/' + whatsappNumber + '?text=' + encodeURIComponent(message);
             
             // Open in new tab

@@ -1,6 +1,9 @@
 <?php
 function konsulbisnis_scripts() {
-    wp_enqueue_style( 'konsulbisnis-style', get_stylesheet_uri(), array(), '1.0.3' );
+    wp_enqueue_style( 'konsulbisnis-style', get_stylesheet_uri(), array(), '1.0.5' );
+    
+    // Enqueue Animation Script
+    wp_enqueue_script( 'konsulbisnis-animations', get_template_directory_uri() . '/assets/js/animations.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'konsulbisnis_scripts' );
 
@@ -12,12 +15,19 @@ function konsulbisnis_setup() {
         'flex-width'  => true,
     ) );
     add_theme_support( 'title-tag' );
+    add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'align-wide' );
+    add_theme_support( 'block-templates' );
+    
     register_nav_menus( array(
         'primary' => __( 'Primary Menu', 'konsulbisnis' ),
         'footer'  => __( 'Footer Menu', 'konsulbisnis' ),
     ) );
 }
 add_action( 'after_setup_theme', 'konsulbisnis_setup' );
+
+// Include Custom Patterns
+require get_template_directory() . '/inc/patterns.php';
 
 function konsulbisnis_cpt() {
     register_post_type( 'service', array(
@@ -93,6 +103,18 @@ function konsulbisnis_customize_register( $wp_customize ) {
         'label'    => __( 'Link Instagram', 'konsulbisnis' ),
         'section'  => 'konsulbisnis_topbar',
         'type'     => 'url',
+    ) );
+    
+     // WhatsApp Setting
+    $wp_customize->add_setting( 'whatsapp_number', array(
+        'default' => '6281346242556',
+        'sanitize_callback' => 'sanitize_text_field',
+    ) );
+    $wp_customize->add_control( 'whatsapp_number', array(
+        'label'    => __( 'Nomor WhatsApp (dengan kode negara)', 'konsulbisnis' ),
+        'section'  => 'konsulbisnis_topbar',
+        'type'     => 'text',
+        'description' => 'Contoh: 6281346242556 (tanpa + atau spasi)',
     ) );
 
 
@@ -203,7 +225,7 @@ function konsulbisnis_customize_register( $wp_customize ) {
     ) );
 
     // Hero Description
-    $wp_customize->add_setting( 'hero_desc', array( 'default' => 'PT Kami Bantu Konsultan bergerak di bidang jasa akuntansi...' ) );
+    $wp_customize->add_setting( 'hero_desc', array( 'default' => 'PT Kami Bantu Konsultan bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan IT. Kami membantu pelaku usaha dalam menerapkan prinsip pengelolaan bisnis yang sesuai standar.' ) );
     $wp_customize->add_control( 'hero_desc', array(
         'label'    => __( 'Deskripsi Hero', 'konsulbisnis' ),
         'section'  => 'konsulbisnis_hero',
@@ -533,28 +555,3 @@ function konsulbisnis_save_team_meta( $post_id ) {
 }
 add_action( 'save_post_team', 'konsulbisnis_save_team_meta' );
 
-// ==========================================
-// Add Post Thumbnails Support
-// ==========================================
-function konsulbisnis_add_theme_support() {
-    add_theme_support( 'post-thumbnails' );
-}
-add_action( 'after_setup_theme', 'konsulbisnis_add_theme_support' );
-
-// ==========================================
-// WhatsApp Number Setting in Customizer
-// ==========================================
-function konsulbisnis_whatsapp_customize( $wp_customize ) {
-    $wp_customize->add_setting( 'whatsapp_number', array(
-        'default' => '6281346242556',
-        'sanitize_callback' => 'sanitize_text_field',
-    ) );
-    $wp_customize->add_control( 'whatsapp_number', array(
-        'label'    => __( 'Nomor WhatsApp (dengan kode negara)', 'konsulbisnis' ),
-        'section'  => 'konsulbisnis_topbar',
-        'type'     => 'text',
-        'description' => 'Contoh: 6281346242556 (tanpa + atau spasi)',
-    ) );
-}
-add_action( 'customize_register', 'konsulbisnis_whatsapp_customize' );
-?>

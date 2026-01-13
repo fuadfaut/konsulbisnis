@@ -23,7 +23,7 @@
                 </span>
             </div>
             <div class="hidden md:flex gap-3">
-                <a href="https://kamibantu.co" class="hover:text-white" target="_blank">Instagram</a>
+                <a href="<?php echo esc_url( get_theme_mod( 'topbar_instagram', '#' ) ); ?>" class="hover:text-white" target="_blank">Instagram</a>
             </div>
         </div>
     </div>
@@ -33,13 +33,13 @@
         <div class="container mx-auto px-6 flex justify-between items-center">
             <div class="flex items-center gap-3 cursor-pointer" onclick="window.location.href='<?php echo home_url('/'); ?>'">
                 <?php
-                $custom_logo_id = get_theme_mod( 'custom_logo' );
-                $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
                 if ( has_custom_logo() ) {
-                    echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '" class="w-10 h-10 rounded"/>';
+                    $custom_logo_id = get_theme_mod( 'custom_logo' );
+                    $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                    echo '<img src="' . esc_url( $logo[0] ) . '" alt="' . get_bloginfo( 'name' ) . '" class="rounded" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;"/>';
                 } else {
-                    // Fallback logo if user hasn't uploaded one yet
-                    echo '<img src="' . get_template_directory_uri() . '/assets/images/logo.png" alt="' . get_bloginfo( 'name' ) . '" class="w-10 h-10 rounded"/>';
+                    // Fallback logo placeholder
+                     echo '<img src="https://placehold.co/40x40/blue/white?text=KB" alt="' . get_bloginfo( 'name' ) . '" class="rounded" style="width: 40px; height: 40px; max-width: 40px; max-height: 40px; object-fit: contain;"/>';
                 }
                 ?>
                 <div class="leading-tight">
@@ -75,9 +75,20 @@
             </button>
         </div>
         <nav id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white border-t border-slate-100 shadow-xl p-6 flex-col gap-4 md:hidden" role="navigation" aria-label="Mobile navigation">
+            <?php 
+             if ( has_nav_menu( 'primary' ) ) {
+                wp_nav_menu( array(
+                    'theme_location' => 'primary',
+                    'container'      => false,
+                    'menu_class'     => 'flex flex-col gap-4',
+                    'fallback_cb'    => false,
+                ) );
+             } else {
+             ?>
             <a href="<?php echo home_url('/'); ?>" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50 focus:outline-none focus:text-blue-700">Beranda</a>
             <a href="#services" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50 focus:outline-none focus:text-blue-700">Layanan</a>
             <a href="#about" class="text-left font-medium text-slate-700 py-2 border-b border-slate-50 focus:outline-none focus:text-blue-700">Tentang</a>
             <a href="#contact" class="text-left font-bold text-blue-700 py-2 focus:outline-none focus:underline">Hubungi Kami</a>
+            <?php } ?>
         </nav>
     </nav>
