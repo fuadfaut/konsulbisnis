@@ -4,6 +4,9 @@ function konsulbisnis_scripts() {
     
     // Enqueue Animation Script
     wp_enqueue_script( 'konsulbisnis-animations', get_template_directory_uri() . '/assets/js/animations.js', array(), '1.0.0', true );
+
+    // Enqueue FontAwesome
+    wp_enqueue_style( 'fontawesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css', array(), '6.4.0' );
 }
 add_action( 'wp_enqueue_scripts', 'konsulbisnis_scripts' );
 
@@ -65,7 +68,7 @@ function konsulbisnis_cpt() {
             'edit_item' => __( 'Edit Klien', 'konsulbisnis' ),
         ),
         'public' => true,
-        'has_archive' => false,
+        'has_archive' => true,
         'menu_icon' => 'dashicons-building',
         'supports' => array( 'title', 'editor', 'thumbnail', 'excerpt', 'page-attributes' ),
         'show_in_rest' => true,

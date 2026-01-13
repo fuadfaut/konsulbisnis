@@ -110,9 +110,13 @@
     <div class="container mx-auto px-6">
         <div class="flex flex-col md:flex-row justify-between items-end mb-10 gap-6 animate-on-scroll">
             <div class="max-w-2xl">
-                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900 mb-4"><?php echo esc_html( get_theme_mod( 'home_service_title', 'Pelayanan Kami' ) ); ?></h2>
-                <p class="text-slate-600 text-lg"><?php echo nl2br( esc_html( get_theme_mod( 'home_service_desc', 'Kami menyediakan layanan lengkap untuk mendukung pertumbuhan bisnis Anda, dari perpajakan hingga transformasi digital.' ) ) ); ?></p>
+                <span class="text-blue-600 font-bold tracking-wider uppercase text-xs mb-3 block">Our Services</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900"><?php echo esc_html( get_theme_mod( 'home_service_title', 'Pelayanan Kami' ) ); ?></h2>
             </div>
+            <a href="<?php echo get_post_type_archive_link('service'); ?>" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-blue-600 text-white font-semibold rounded-full text-sm transition-colors">
+                Semua Layanan
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            </a>
         </div>
         <div class="flex flex-col lg:flex-row gap-8">
             <?php
@@ -176,12 +180,12 @@
                         ?>
                         <div class="p-8 border border-slate-100 rounded-2xl bg-slate-50 hover:bg-white hover:shadow-xl hover:border-blue-100 transition-all duration-300 group flex flex-col justify-between h-full animate-on-scroll">
                             <div>
-                                <div class="flex items-start justify-between mb-6">
-                                    <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors">
+                                <div class="flex items-center gap-4 mb-6">
+                                    <div class="p-3 bg-white rounded-lg shadow-sm group-hover:bg-blue-50 transition-colors shrink-0">
                                         <svg class="text-blue-700 w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="16" height="20" x="4" y="2" rx="2"></rect><line x1="8" x2="16" y1="6" y2="6"></line><line x1="16" x2="16" y1="14" y2="18"></line><path d="M16 10h.01"></path><path d="M12 10h.01"></path><path d="M8 10h.01"></path><path d="M12 14h.01"></path><path d="M8 14h.01"></path><path d="M12 18h.01"></path><path d="M8 18h.01"></path></svg>
                                     </div>
+                                    <h3 class="text-xl font-bold text-slate-900 m-0 leading-tight"><?php the_title(); ?></h3>
                                 </div>
-                                <h3 class="text-xl font-bold text-slate-900 mb-3"><?php the_title(); ?></h3>
                                 <?php edit_post_link( '✎ Edit', '<span class="text-xs text-blue-500 hover:underline mb-2 block">', '</span>' ); ?>
                                 <div class="text-slate-600 text-sm mb-6 leading-relaxed [&>ul]:space-y-2 [&>p]:mb-3 [&>ul>li]:flex [&>ul>li]:items-start [&>ul>li]:gap-2 [&>ul>li]:before:content-['✓'] [&>ul>li]:before:text-blue-500 [&>ul>li]:before:font-bold">
                                     <?php the_content(); ?>
@@ -195,6 +199,96 @@
                 endif;
                 ?>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- Blog Section - Latest Posts -->
+<section id="blog" class="py-20 bg-slate-50">
+    <div class="container mx-auto px-6 lg:px-8" style="max-width: 1200px;">
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12 gap-6 border-b border-slate-200 pb-8">
+            <div>
+                <span class="text-blue-600 font-bold tracking-wider uppercase text-xs mb-2 block">Our Journal</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-slate-900">Wawasan & Artikel</h2>
+            </div>
+            <a href="<?php echo home_url('/blog'); ?>" class="inline-flex items-center gap-2 px-6 py-3 bg-slate-900 hover:bg-blue-600 text-white font-semibold rounded-full text-sm transition-colors">
+                Lihat Semua Artikel
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"></path></svg>
+            </a>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <?php
+            $blog_query = new WP_Query( array(
+                'post_type' => 'post',
+                'posts_per_page' => 3,
+                'orderby' => 'date',
+                'order' => 'DESC',
+            ) );
+
+            if ( $blog_query->have_posts() ) :
+                while ( $blog_query->have_posts() ) : $blog_query->the_post();
+            ?>
+                <article class="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 cursor-pointer flex flex-col h-full group">
+                    <!-- Image Header - Fixed Height 200px -->
+                    <a href="<?php the_permalink(); ?>" class="block relative" style="height: 200px; overflow: hidden;">
+                        <?php if ( has_post_thumbnail() ) : ?>
+                            <img src="<?php echo get_the_post_thumbnail_url(get_the_ID(), 'medium_large'); ?>" alt="<?php the_title_attribute(); ?>" style="width: 100%; height: 200px; object-fit: cover; transition: transform 0.7s;" class="group-hover:scale-105">
+                        <?php else: ?>
+                            <div style="width: 100%; height: 200px; background-color: #f8fafc; display: flex; align-items: center; justify-content: center; color: #cbd5e1;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"></rect><circle cx="9" cy="9" r="2"></circle><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"></path></svg>
+                            </div>
+                        <?php endif; ?>
+                        <?php
+                            $categories = get_the_category();
+                            if ( ! empty( $categories ) ) :
+                        ?>
+                        <div style="position: absolute; top: 16px; left: 16px;">
+                            <span style="background: rgba(255,255,255,0.95); backdrop-filter: blur(4px); padding: 6px 12px; border-radius: 8px; font-size: 11px; font-weight: 700; color: #2563eb; box-shadow: 0 1px 3px rgba(0,0,0,0.1); letter-spacing: 0.025em;"><?php echo esc_html( $categories[0]->name ); ?></span>
+                        </div>
+                        <?php endif; ?>
+                    </a>
+                    
+                    <!-- Body -->
+                    <div class="p-6 flex-1 flex flex-col">
+                        <!-- Meta -->
+                        <div class="flex items-center text-xs text-slate-400 mb-3 gap-3 font-medium">
+                             <span class="flex items-center"><i class="far fa-calendar-alt mr-1.5"></i> <?php echo get_the_date('d M Y'); ?></span>
+                             <span class="w-1 h-1 bg-slate-300 rounded-full"></span>
+                             <span class="flex items-center"><i class="far fa-clock mr-1.5"></i> <?php echo ceil(str_word_count(get_the_content()) / 200); ?> min read</span>
+                        </div>
+                        
+                        <!-- Title -->
+                        <h3 class="text-xl font-bold text-slate-900 mb-3 leading-snug group-hover:text-blue-600 transition-colors line-clamp-2">
+                            <a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+                        </h3>
+                        
+                        <!-- Excerpt -->
+                        <p class="text-slate-500 text-sm line-clamp-3 leading-relaxed" style="flex: 1 1 auto; margin-bottom: 16px;">
+                            <?php echo wp_trim_words( get_the_excerpt(), 20 ); ?>
+                        </p>
+                        
+                        <!-- Footer -->
+                        <div style="margin-top: auto; padding-top: 16px; border-top: 1px solid #e2e8f0; display: flex; align-items: center; gap: 12px;">
+                            <div class="author-avatar" style="width: 32px; height: 32px; border-radius: 9999px; background-color: #f1f5f9; overflow: hidden; flex-shrink: 0;">
+                                <?php echo get_avatar( get_the_author_meta( 'ID' ), 32, '', '', array('style' => 'width: 32px; height: 32px; border-radius: 9999px;') ); ?>
+                            </div>
+                            <span style="font-size: 14px; font-weight: 500; color: #475569;"><?php the_author(); ?></span>
+                        </div>
+                    </div>
+                </article>
+            <?php
+                endwhile;
+                wp_reset_postdata();
+            else :
+            ?>
+                <div class="col-span-full text-center py-12">
+                    <div class="bg-slate-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-300">
+                        <i class="fas fa-newspaper text-2xl"></i>
+                    </div>
+                    <p class="text-slate-500">Belum ada artikel blog. Silakan tambah artikel di Dashboard.</p>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </section>

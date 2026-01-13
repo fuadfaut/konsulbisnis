@@ -99,6 +99,30 @@ Text Domain: konsulbisnis
     transform: translateY(0);
 }
 
+/* Animations from contoh.html */
+.fade-enter {
+    animation: fadeEnter 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes fadeEnter {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.text-gradient {
+    background: linear-gradient(135deg, #1e293b 0%, #4f46e5 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 @layer properties {
     @supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))) {
 
@@ -3025,6 +3049,21 @@ footer img.rounded {
     border-radius: 0.25rem;
 }
 
+/* Global Max-Width Override - 1080px for better readability */
+.container {
+    max-width: 1080px !important;
+}
+
+/* Ensure nested containers also follow the rule */
+.container.mx-auto,
+section .container,
+header .container,
+footer .container,
+main .container,
+nav .container {
+    max-width: 1080px !important;
+}
+
 /* Header logo specific sizing */
 nav .custom-logo-link img,
 nav .custom-logo,
@@ -3038,4 +3077,316 @@ nav .custom-logo,
     min-height: 40px !important;
     object-fit: contain;
     border-radius: 0.25rem;
+}
+
+/* =====================================================
+   BLOG STYLES - Typography & Components
+   ===================================================== */
+
+/* Blog Prose Typography */
+.prose {
+    color: #475569;
+    line-height: 1.75;
+}
+
+.prose h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 5rem;
+}
+
+.prose h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    scroll-margin-top: 5rem;
+}
+
+.prose h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-top: 2rem;
+    margin-bottom: 0.75rem;
+}
+
+.prose p {
+    margin-bottom: 1.5rem;
+    line-height: 1.75;
+    color: #475569;
+}
+
+.prose ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #475569;
+}
+
+.prose ol {
+    list-style-type: decimal;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    color: #475569;
+}
+
+.prose li {
+    margin-bottom: 0.5rem;
+}
+
+.prose blockquote {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1.5rem;
+    font-style: italic;
+    color: #334155;
+    background: #eff6ff;
+    padding: 1rem 1.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin: 2rem 0;
+}
+
+.prose a {
+    color: #2563eb;
+    text-decoration: underline;
+}
+
+.prose a:hover {
+    color: #1d4ed8;
+}
+
+.prose strong {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+.prose em {
+    font-style: italic;
+}
+
+.prose code {
+    background: #f1f5f9;
+    padding: 0.2rem 0.4rem;
+    border-radius: 0.25rem;
+    font-size: 0.875em;
+    color: #dc2626;
+}
+
+.prose pre {
+    background: #1e293b;
+    color: #e2e8f0;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.prose pre code {
+    background: transparent;
+    padding: 0;
+    color: inherit;
+}
+
+/* Prose Image Styles */
+.prose figure {
+    margin: 2.5rem 0;
+}
+
+.prose img {
+    border-radius: 0.75rem;
+    width: 100%;
+    height: auto;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.prose figcaption {
+    text-align: center;
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 0.75rem;
+    font-style: italic;
+}
+
+/* TOC Active State Styling */
+.toc-link {
+    border-left: 2px solid transparent;
+    transition: all 0.2s;
+}
+
+.toc-link:hover {
+    color: #2563eb;
+    background-color: #f1f5f9;
+}
+
+.toc-link.active {
+    color: #2563eb;
+    border-left-color: #2563eb;
+    background-color: #eff6ff;
+    font-weight: 600;
+}
+
+/* Hide Scrollbar for clean UI */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Blog Pagination Styles */
+.blog-pagination .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    justify-content: center;
+}
+
+.blog-pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: #64748b;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+}
+
+.blog-pagination .page-numbers:hover {
+    color: #2563eb;
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.blog-pagination .page-numbers.current {
+    color: white;
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.blog-pagination .prev,
+.blog-pagination .next {
+    padding: 0 1rem;
+    gap: 0.5rem;
+}
+
+.blog-pagination .dots {
+    border: none;
+    background: transparent;
+}
+
+/* Line Clamp Utilities */
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Text Shadow for Hero */
+.text-shadow {
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Fade In Animation */
+.fade-in {
+    animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =====================================================
+   AUTHOR AVATAR FIX
+   ===================================================== */
+.author-avatar img {
+    width: 32px !important;
+    height: 32px !important;
+    border-radius: 9999px !important;
+    object-fit: cover !important;
+}
+
+/* WordPress default avatar styling fix */
+.avatar {
+    border-radius: 9999px !important;
+}
+
+/* =====================================================
+   PAGINATION STYLES - Global
+   ===================================================== */
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 40px;
+    height: 40px;
+    padding: 0 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #64748b;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.page-numbers:hover {
+    color: #2563eb;
+    border-color: #2563eb;
+    background: #eff6ff;
+}
+
+.page-numbers.current {
+    color: white;
+    background: #2563eb;
+    border-color: #2563eb;
+}
+
+.page-numbers.prev,
+.page-numbers.next {
+    padding: 0 16px;
+    gap: 8px;
+}
+
+.page-numbers.dots {
+    border: none;
+    background: transparent;
+    min-width: auto;
+    padding: 0 4px;
+}
+
+/* Service Archive specific */
+.service-features ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Client Archive max-width */
+.archive-client .container {
+    max-width: 1080px !important;
 }
