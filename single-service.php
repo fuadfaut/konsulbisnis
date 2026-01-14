@@ -101,7 +101,7 @@ elseif(strpos($title_lower, 'marketing') !== false) $icon_class = 'fa-bullhorn';
                         <span class="text-2xl font-bold text-slate-900">Gratis</span>
                     </div>
 
-                    <a href="https://wa.me/<?php echo esc_attr(get_theme_mod('whatsapp_number', '6281346242556')); ?>?text=<?php echo urlencode('Halo, saya tertarik dengan layanan ' . get_the_title()); ?>" target="_blank" class="block w-full bg-amber-500 hover:bg-amber-600 text-slate-900 py-3 rounded-xl font-bold mb-4 text-center transition-all shadow-lg hover:shadow-xl">
+                    <a href="https://wa.me/<?php echo esc_attr(get_theme_mod('whatsapp_number', '6285124945494')); ?>?text=<?php echo urlencode('Halo, saya tertarik dengan layanan ' . get_the_title()); ?>" target="_blank" class="block w-full bg-amber-500 hover:bg-amber-600 text-slate-900 py-3 rounded-xl font-bold mb-4 text-center transition-all shadow-lg hover:shadow-xl">
                         Jadwalkan Konsultasi
                     </a>
                     <a href="<?php echo get_post_type_archive_link('service'); ?>" class="block w-full bg-blue-700 hover:bg-blue-800 text-white border border-blue-700 py-3 rounded-xl font-bold transition text-center">

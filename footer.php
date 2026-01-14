@@ -150,7 +150,7 @@
     // Contact Form Handling with WhatsApp
     // ==========================================
     // Pass PHP data to JS
-    var whatsappNumber = '<?php echo esc_js( get_theme_mod( 'whatsapp_number', '6281346242556' ) ); ?>';
+    var whatsappNumber = '<?php echo esc_js( get_theme_mod( 'whatsapp_number', '6285124945494' ) ); ?>';
 
     var contactForms = document.querySelectorAll('#contact form, #contact-form form, #contact-form-main form, #contact-form-sistemasi form');
     

@@ -135,7 +135,7 @@ document.getElementById('contact-form-page').addEventListener('submit', function
     message += `*Layanan:* ${topik}\n\n`;
     message += `*Detail Kebutuhan:*\n${deskripsi}`;
     
-    const waNumber = '<?php echo esc_js( get_theme_mod( 'whatsapp_number', '6281346242556' ) ); ?>';
+    const waNumber = '<?php echo esc_js( get_theme_mod( 'whatsapp_number', '6285124945494' ) ); ?>';
     const waUrl = `https://wa.me/${waNumber}?text=${encodeURIComponent(message)}`;
     
     window.open(waUrl, '_blank');

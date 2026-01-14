@@ -327,7 +327,7 @@ Tambahkan class delay:
 ### Integrasi WhatsApp
 Form kontak otomatis mengirim pesan ke WhatsApp. Nomor WhatsApp dikonfigurasi via Customizer.
 
-Format nomor: `6281346242556` (tanpa + atau spasi)
+Format nomor: `6285124945494` (tanpa + atau spasi)
 
 ---
 
@@ -348,7 +348,7 @@ Pastikan JavaScript tidak diblokir. Periksa console browser untuk error.
 
 ### Form WhatsApp Tidak Berfungsi
 1. Periksa nomor WhatsApp di Customizer
-2. Format yang benar: `6281346242556`
+2. Format yang benar: `6285124945494`
 3. Tidak menggunakan tanda + atau spasi
 
 ---

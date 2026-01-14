@@ -85,7 +85,7 @@ function konsulbisnis_customize_register( $wp_customize ) {
     ) );
 
     // Phone Number
-    $wp_customize->add_setting( 'topbar_phone', array( 'default' => '0813-4624-2556' ) );
+    $wp_customize->add_setting( 'topbar_phone', array( 'default' => '0851-2494-5494' ) );
     $wp_customize->add_control( 'topbar_phone', array(
         'label'    => __( 'Nomor Telepon (Top Bar)', 'konsulbisnis' ),
         'section'  => 'konsulbisnis_topbar',
@@ -110,14 +110,14 @@ function konsulbisnis_customize_register( $wp_customize ) {
     
      // WhatsApp Setting
     $wp_customize->add_setting( 'whatsapp_number', array(
-        'default' => '6281346242556',
+        'default' => '6285124945494',
         'sanitize_callback' => 'sanitize_text_field',
     ) );
     $wp_customize->add_control( 'whatsapp_number', array(
         'label'    => __( 'Nomor WhatsApp (dengan kode negara)', 'konsulbisnis' ),
         'section'  => 'konsulbisnis_topbar',
         'type'     => 'text',
-        'description' => 'Contoh: 6281346242556 (tanpa + atau spasi)',
+        'description' => 'Contoh: 6285124945494 (tanpa + atau spasi)',
     ) );
 
 
@@ -144,7 +144,7 @@ function konsulbisnis_customize_register( $wp_customize ) {
     ) );
 
     // Footer Phone 1
-    $wp_customize->add_setting( 'footer_phone1', array( 'default' => '0813-4624-2556' ) );
+    $wp_customize->add_setting( 'footer_phone1', array( 'default' => '0851-2494-5494' ) );
     $wp_customize->add_control( 'footer_phone1', array(
         'label'    => __( 'No. Telepon 1', 'konsulbisnis' ),
         'section'  => 'konsulbisnis_footer',
@@ -152,7 +152,7 @@ function konsulbisnis_customize_register( $wp_customize ) {
     ) );
 
     // Footer Phone 2
-    $wp_customize->add_setting( 'footer_phone2', array( 'default' => '0813-4624-2556' ) );
+    $wp_customize->add_setting( 'footer_phone2', array( 'default' => '0851-2494-5494' ) );
     $wp_customize->add_control( 'footer_phone2', array(
         'label'    => __( 'No. Telepon 2', 'konsulbisnis' ),
         'section'  => 'konsulbisnis_footer',
