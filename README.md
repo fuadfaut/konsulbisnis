@@ -1,10 +1,10 @@
-# KonsulBisnis v2 - WordPress Theme
+# KonsulBisnis v3.2 - WordPress Theme
 
-![Version](https://img.shields.io/badge/version-1.0-blue)
+![Version](https://img.shields.io/badge/version-1.3.2-blue)
 ![License](https://img.shields.io/badge/license-GPL--2.0+-green)
 ![WordPress](https://img.shields.io/badge/WordPress-6.0+-blueviolet)
 
-**KonsulBisnis v2** adalah tema WordPress profesional yang dikembangkan untuk PT Kami Bantu Konsultan. Tema ini dikonversi dari proyek Next.js dan dioptimalkan untuk website jasa konsultasi bisnis, akuntansi, perpajakan, dan IT.
+**KonsulBisnis v3.2** adalah tema WordPress profesional yang dikembangkan untuk PT Kami Bantu Konsultan. Tema ini dikonversi dari proyek Next.js dan dioptimalkan untuk website jasa konsultasi bisnis, akuntansi, perpajakan, dan IT.
 
 ---
 
@@ -71,7 +71,7 @@
 2. Upload folder `wel` (atau nama folder tema) ke `/wp-content/themes/`
 3. Login ke WordPress Admin
 4. Navigasi ke **Appearance → Themes**
-5. Aktifkan tema **KonsulBisnis v2**
+5. Aktifkan tema **KonsulBisnis v3.2**
 
 ---
 
@@ -376,4 +376,4 @@ Tema ini dilisensikan di bawah [GNU General Public License v2.0 or later](http:/
 
 ---
 
-**© 2024 PT. Kami Bantu Konsultan. Hak Cipta Dilindungi Undang-Undang.**
+**© 2026 PT. Kami Bantu Konsultan. Hak Cipta Dilindungi Undang-Undang.**
