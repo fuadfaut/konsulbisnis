@@ -9,7 +9,7 @@
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-amber-500 animate-gradient"><?php echo esc_html( get_theme_mod( 'hero_highlight', 'Terintegrasi' ) ); ?></span>
             </h1>
             <p class="hero-animate-delay-2 text-lg text-slate-600 mb-8 max-w-lg leading-relaxed">
-                <?php echo nl2br( esc_html( get_theme_mod( 'hero_desc', 'PT Kami Bantu Konsultan bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan IT. Kami membantu pelaku usaha dalam menerapkan prinsip pengelolaan bisnis yang sesuai standar.' ) ) ); ?>
+                <?php echo nl2br( esc_html( get_theme_mod( 'hero_desc', 'PT Kami Bantu Konsultan adalah jasa konsultan di bidang manajemen, akuntansi, perpajakan, dan aplikasi bisnis. Kami membantu para pelaku usaha dalam mengelola manajemen dan administrasi perusahaan' ) ) ); ?>
             </p>
             <div class="hero-animate-delay-3 flex flex-col sm:flex-row gap-4">
                 <?php if ( get_theme_mod( 'hero_btn1_show', true ) ) : ?>
@@ -299,7 +299,7 @@
         <div class="flex flex-col lg:flex-row gap-16 items-center">
             <div class="lg:w-1/2 animate-fade-in-left">
                 <h2 class="text-3xl lg:text-4xl font-bold mb-6"><?php echo esc_html( get_theme_mod( 'about_title', 'Tentang Kami' ) ); ?></h2>
-                <p class="text-slate-300 text-lg mb-6 leading-relaxed"><?php echo nl2br( esc_html( get_theme_mod( 'about_desc', 'PT Kami Bantu Konsultan adalah perseroan perorangan yang bergerak di bidang jasa akuntansi, perpajakan, manajemen bisnis, dan konsultan di bidang Information Technology khususnya penyedia aplikasi keuangan dan bisnis.' ) ) ); ?></p>
+                <p class="text-slate-300 text-lg mb-6 leading-relaxed"><?php echo nl2br( esc_html( get_theme_mod( 'about_desc', 'PT Kami Bantu Konsultan adalah mitra strategis untuk membangun fondasi bisnis yang kuat dan terukur. Kami menyediakan solusi terintegrasi yang mencakup Studi Kelayakan, Manajemen Keuangan, Akuntansi, dan Perpajakan, hingga Sistemasi serta Aplikasi Bisnis. Kami hadir untuk memastikan operasional Anda berjalan efisien dan tumbuh secara sistematis ke level berikutnya.' ) ) ); ?></p>
                 <p class="text-slate-400 mb-8 leading-relaxed"><?php echo nl2br( esc_html( get_theme_mod( 'about_desc_2', 'Didirikan atas dasar keprihatinan terhadap rendahnya literasi keuangan masyarakat, serta ketidakpahaman para pelaku ekonomi utamanya UMKM dalam tata kelola keuangan, perpajakan, dan manajemen. Kami memiliki visi menjadi perusahaan penyedia jasa yang edukatif dan solutif bagi klien dengan motto "Kolaborasi untuk Bertumbuh".' ) ) ); ?></p>
                 <div class="grid grid-cols-2 gap-6">
                     <div class="p-6 bg-slate-800 rounded-xl border border-slate-700 hover:border-amber-500 transition-colors"><h4 class="text-3xl font-bold text-amber-400 mb-1"><?php echo esc_html( get_theme_mod( 'stat_clients_num', '50+' ) ); ?></h4><p class="text-sm text-slate-400">Klien Aktif</p></div>
@@ -382,7 +382,7 @@
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1">Kantor</h4>
-                                <p class="text-blue-200 text-sm leading-relaxed"><?php echo esc_html( get_theme_mod( 'footer_address', 'Jl. Jend A.Yani...' ) ); ?></p>
+                                <p class="text-blue-200 text-sm leading-relaxed"><?php echo esc_html( get_theme_mod( 'footer_address', 'Jl. Jend A.Yani (Eks.Cendrawasih) Ruko No 1B, Kel. Temindung Kec. Samarinda Kota, Kota Samarinda, Kalimantan Timur 75117' ) ); ?></p>
                             </div>
                         </div>
                         
@@ -405,6 +405,17 @@
                             <div>
                                 <h4 class="font-bold text-white mb-1">Email</h4>
                                 <p class="text-blue-200 text-sm"><?php echo esc_html( get_theme_mod( 'footer_email', 'KonsultanKamiBantu@gmail.com' ) ); ?></p>
+                            </div>
+                        </div>
+                        
+                        <!-- Instagram -->
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-white/10 rounded-lg flex items-center justify-center shrink-0">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-blue-200"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line></svg>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-white mb-1">Instagram</h4>
+                                <a href="https://instagram.com/kamibantu.co" target="_blank" rel="noopener noreferrer" class="text-blue-200 text-sm hover:text-white transition-colors">@kamibantu.co</a>
                             </div>
                         </div>
                     </div>

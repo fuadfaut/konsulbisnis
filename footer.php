@@ -49,7 +49,7 @@
                 <h4 class="font-bold mb-6">Kontak</h4>
                 <ul class="space-y-3 text-sm text-slate-400">
                     <li><?php echo esc_html( get_theme_mod( 'footer_phone1', '0813-4624-2556' ) ); ?></li>
-                    <li><?php echo esc_html( get_theme_mod( 'footer_phone2', '0823-5242-5339' ) ); ?></li>
+                    <li><?php echo esc_html( get_theme_mod( 'footer_phone2', '@kamibantu.co' ) ); ?></li>
                     <li><?php echo esc_html( get_theme_mod( 'footer_email', 'KonsultanKamiBantu@gmail.com' ) ); ?></li>
                 </ul>
             </div>
