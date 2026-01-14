@@ -152,7 +152,7 @@ function konsulbisnis_customize_register( $wp_customize ) {
     ) );
 
     // Footer Phone 2
-    $wp_customize->add_setting( 'footer_phone2', array( 'default' => '0823-5242-5339' ) );
+    $wp_customize->add_setting( 'footer_phone2', array( 'default' => '0813-4624-2556' ) );
     $wp_customize->add_control( 'footer_phone2', array(
         'label'    => __( 'No. Telepon 2', 'konsulbisnis' ),
         'section'  => 'konsulbisnis_footer',
