@@ -41,7 +41,7 @@ get_header(); ?>
                             </div>
                             <div>
                                 <h4 class="font-bold text-white mb-1">WhatsApp</h4>
-                                <p class="text-blue-200 text-sm"><?php echo esc_html( get_theme_mod( 'footer_phone1', '0813-4624-2556' ) ); ?></p>
+                                <p class="text-blue-200 text-sm"><?php echo esc_html( get_theme_mod( 'footer_phone1', '0851-2494-5494' ) ); ?></p>
                             </div>
                         </div>
                         
